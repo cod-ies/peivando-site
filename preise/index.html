@@ -152,6 +152,19 @@
     addEventListener("scroll", function () {
       shell.classList.toggle("is-stuck", scrollY > 24);
     }, { passive: true });
+
+    var SHELL_CONTACT = { de: "Kontakt", en: "Contact", fa: "تماس", prs: "تماس" };
+    function applyShellLang() {
+      var lang = "de";
+      try { lang = localStorage.getItem("peivando.lang") || "de"; } catch (e) { lang = "de"; }
+      var rtl = lang === "fa" || lang === "prs";
+      document.body.setAttribute("dir", rtl ? "rtl" : "ltr");
+      document.documentElement.lang = lang === "prs" ? "fa" : (lang === "en" ? "en" : "de");
+      var link = document.querySelector(".pricing-shell-link");
+      if (link && SHELL_CONTACT[lang]) link.textContent = SHELL_CONTACT[lang];
+    }
+    applyShellLang();
+    addEventListener("peivando:lang", applyShellLang);
   </script>
 </body>
 </html>

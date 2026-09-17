@@ -30,11 +30,16 @@ export function readPricingLang() {
 }
 
 export function priceLabel(amount, lang) {
-  const locale = lang === "en" ? "en-GB" : lang === "fa" || lang === "prs" ? "fa-AF" : "de-DE";
-  const formatted = amount.toLocaleString(locale);
-  if (lang === "en") return { prefix: "from", amount: `€${formatted}` };
-  if (lang === "fa" || lang === "prs") return { prefix: "از", amount: `${formatted} €` };
-  return { prefix: "ab", amount: `€${formatted}` };
+  switch (lang) {
+    case "en":
+      return { prefix: "from", amount: `€${amount.toLocaleString("en-GB")}` };
+    case "fa":
+    case "prs":
+      return { prefix: "از", amount: `${amount.toLocaleString("fa-AF")} €` };
+    case "de":
+    default:
+      return { prefix: "ab", amount: `€${amount.toLocaleString("de-DE")}` };
+  }
 }
 
 function whatsappHref(lang, packageName) {
@@ -62,7 +67,7 @@ function renderCard(pkg, copy, lang) {
   const badge = pkg.featured
     ? `<p class="pricing-badge">${escapeHtml(copy.featured)}</p>`
     : `<p class="pricing-badge is-empty" aria-hidden="true"></p>`;
-  const contact = `${PRICING_CONTACT.contactHref}?paket=${encodeURIComponent(pkg.id)}`;
+  const contact = `/?paket=${encodeURIComponent(pkg.id)}#contact`;
 
   return `<article class="pricing-card${pkg.featured ? " is-featured" : ""}" data-package="${pkg.id}">
     ${badge}

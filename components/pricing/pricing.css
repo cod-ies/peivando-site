@@ -232,6 +232,13 @@
   color: var(--teal);
 }
 
+.pricing-page[dir="rtl"] .pricing-shell-link {
+  font-family: var(--fa);
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 0.95rem;
+}
+
 .pricing-foot {
   border-top: 1px solid var(--line-soft);
   padding-block: 44px 52px;
@@ -243,7 +250,6 @@
   flex-wrap: wrap;
   gap: 18px 32px;
   align-items: baseline;
-  justify-content: space-between;
 }
 
 .pricing-foot a {
@@ -404,6 +410,10 @@
   .pricing-grid {
     grid-template-columns: 1fr;
     max-width: 32rem;
+  }
+
+  .pricing-badge.is-empty {
+    display: none;
   }
 }
 

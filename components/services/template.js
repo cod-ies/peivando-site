@@ -151,7 +151,7 @@ export function pageShell(opts) {
 <link rel="stylesheet" href="/components/services/styles.css">
 <script type="application/ld+json">${opts.jsonLd}</script>
 </head>
-<body>
+<body dir="ltr">
 ${header(opts.nav)}
 <main id="main">
 ${opts.main}
@@ -266,7 +266,12 @@ export function branchenIndexPage() {
   ${packageBlock()}
   <section class="contact">
     <div class="wrap">
-      <a class="btn btn-fill" href="/#contact"><span data-i="cta.talk">${esc(de.cta.talk)}</span></a>
+      <p class="mono" data-i="nav.contact">${esc(de.nav.contact)}</p>
+      <h2 data-i="cta.talk">${esc(de.cta.talk)}</h2>
+      <div class="cta">
+        <a class="btn btn-fill" href="/#contact"><span data-i="cta.talk">${esc(de.cta.talk)}</span></a>
+        <a class="btn btn-line" data-wa href="${WA_HREF}"><span data-i="cta.whatsapp">${esc(de.cta.whatsapp)}</span></a>
+      </div>
     </div>
   </section>`;
 

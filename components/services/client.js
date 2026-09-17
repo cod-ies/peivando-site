@@ -1,5 +1,5 @@
-import { copyFor, isLocale, messages } from "./copy.js";
-import { WHATSAPP, assertNever } from "./catalog.js";
+import { copyFor, messages } from "./copy.js";
+import { WHATSAPP, assertNever, isLocale } from "./catalog.js";
 
 const LANG_KEY = "peivando.lang";
 

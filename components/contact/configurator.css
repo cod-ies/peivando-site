@@ -238,6 +238,7 @@ body.contact-page[dir="rtl"] .contact-chan-t span { text-align: right; }
   border-radius: 14px;
   background: var(--void);
   padding: clamp(22px, 3vw, 32px);
+  scroll-margin-top: 90px;
 }
 .contact-form fieldset {
   border: 0;

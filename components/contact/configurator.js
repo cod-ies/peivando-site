@@ -50,11 +50,17 @@ function controlValue(form, name) {
 }
 
 function formatWhatsAppNumber(digits) {
-  const pretty = digits.replace(
-    /^(\d{1,3})(\d{2})(\d{3})(\d+)$/,
-    "$1 $2 $3 $4"
-  );
-  return "+" + pretty;
+  if (digits.startsWith("93") && digits.length >= 11) {
+    return (
+      "+93 " +
+      digits.slice(2, 4) +
+      " " +
+      digits.slice(4, 7) +
+      " " +
+      digits.slice(7)
+    );
+  }
+  return "+" + digits;
 }
 
 export function composeEnquiry(form, lang) {
@@ -163,11 +169,6 @@ function validate(form, lang) {
   );
 }
 
-function say(out, kind, text) {
-  out.className = "contact-msg show " + kind;
-  out.textContent = text;
-}
-
 function formUrl() {
   if (typeof window !== "undefined" && window.PEIVANDO_FORM_URL) {
     return String(window.PEIVANDO_FORM_URL);
@@ -207,6 +208,8 @@ export function initContactConfigurator(root) {
   if (!form || !out) return;
 
   let lang = readLang();
+  let statusKind = "";
+  let statusKey = "";
 
   const mailAddr = root.querySelector("#mail-addr");
   const waNum = root.querySelector("#wa-num");
@@ -215,10 +218,27 @@ export function initContactConfigurator(root) {
   const year = root.querySelector("#yr");
   if (year) year.textContent = String(new Date().getFullYear());
 
+  function renderStatus() {
+    if (!statusKey) {
+      out.className = "contact-msg";
+      out.textContent = "";
+      return;
+    }
+    out.className = "contact-msg show " + statusKind;
+    out.textContent = t(lang, statusKey);
+  }
+
+  function say(kind, key) {
+    statusKind = kind;
+    statusKey = key;
+    renderStatus();
+  }
+
   function refresh() {
     applyStrings(root, lang);
     updateRecap(root, form, lang);
     updateChannels(root, form, lang);
+    renderStatus();
   }
 
   root.querySelectorAll(".contact-langs button").forEach(function (btn) {
@@ -238,9 +258,10 @@ export function initContactConfigurator(root) {
     updateChannels(root, form, lang);
   });
   form.addEventListener("input", function () {
-    if (out.classList.contains("warn")) {
-      out.className = "contact-msg";
-      out.textContent = "";
+    if (statusKind === "warn") {
+      statusKind = "";
+      statusKey = "";
+      renderStatus();
     }
     updateRecap(root, form, lang);
     updateChannels(root, form, lang);
@@ -249,7 +270,7 @@ export function initContactConfigurator(root) {
   form.addEventListener("submit", function (event) {
     event.preventDefault();
     if (!validate(form, lang)) {
-      say(out, "warn", t(lang, "f.miss"));
+      say("warn", "f.miss");
       const firstBad = form.querySelector('[aria-invalid="true"]');
       if (firstBad) firstBad.focus();
       return;
@@ -267,7 +288,7 @@ export function initContactConfigurator(root) {
 
     const endpoint = formUrl();
     if (!endpoint) {
-      say(out, "warn", t(lang, "f.off"));
+      say("warn", "f.off");
       return;
     }
 
@@ -286,13 +307,13 @@ export function initContactConfigurator(root) {
           if (firstLang) firstLang.setCustomValidity("");
           updateRecap(root, form, lang);
           updateChannels(root, form, lang);
-          say(out, "ok", t(lang, "f.sent"));
+          say("ok", "f.sent");
         } else {
-          say(out, "warn", t(lang, "f.err"));
+          say("warn", "f.err");
         }
       })
       .catch(function () {
-        say(out, "warn", t(lang, "f.err"));
+        say("warn", "f.err");
       });
   });
 

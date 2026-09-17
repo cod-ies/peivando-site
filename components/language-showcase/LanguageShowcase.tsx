@@ -4,6 +4,7 @@ import { useCallback, useId, useState } from "react";
 import { AnimatePresence, MotionConfig, motion, useReducedMotion } from "motion/react";
 import { DeviceScene } from "./DeviceScene";
 import { LocaleSwitcher } from "./LocaleSwitcher";
+import { BrandMark } from "./BrandMark";
 import { CHROME } from "./content";
 import { cx } from "./cx";
 import { getLocaleMeta } from "./locales";
@@ -63,18 +64,17 @@ export function LanguageShowcase({
                 <p className="pv-ls__lede">{chrome.lede}</p>
               </motion.div>
             </AnimatePresence>
-            <LocaleSwitcher
-              locale={locale}
-              onChange={selectLocale}
-              label={chrome.switcherLabel}
-              layoutId={pillId}
-            />
+            <div className="pv-ls__controls">
+              <LocaleSwitcher
+                locale={locale}
+                onChange={selectLocale}
+                label={chrome.switcherLabel}
+                layoutId={pillId}
+              />
+              <BrandMark pulse={pulse} />
+            </div>
           </div>
-          <DeviceScene
-            locale={locale}
-            pulse={pulse}
-            conceptLabel={chrome.concept}
-          />
+          <DeviceScene locale={locale} />
         </div>
         <p className="pv-ls__hint">{chrome.hint}</p>
       </section>

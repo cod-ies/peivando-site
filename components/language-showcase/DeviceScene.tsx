@@ -2,17 +2,14 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { BakeryScreen } from "./BakeryScreen";
-import { BrandMark } from "./BrandMark";
 import { URL_HOST, localePath } from "./content";
 import type { ShowcaseLocale } from "./types";
 
 type DeviceSceneProps = {
   locale: ShowcaseLocale;
-  pulse: number;
-  conceptLabel: string;
 };
 
-export function DeviceScene({ locale, pulse, conceptLabel }: DeviceSceneProps) {
+export function DeviceScene({ locale }: DeviceSceneProps) {
   const reduce = useReducedMotion();
   const url = `${URL_HOST}${localePath(locale)}`;
   const fade = {
@@ -43,7 +40,6 @@ export function DeviceScene({ locale, pulse, conceptLabel }: DeviceSceneProps) {
                 </motion.span>
               </AnimatePresence>
             </div>
-            <span className="pv-ls__badge">{conceptLabel}</span>
           </div>
           <div className="pv-ls__laptop-screen">
             <BakeryScreen locale={locale} variant="desktop" />
@@ -52,8 +48,6 @@ export function DeviceScene({ locale, pulse, conceptLabel }: DeviceSceneProps) {
         <div className="pv-ls__laptop-chin" aria-hidden="true" />
         <div className="pv-ls__laptop-base" aria-hidden="true" />
       </div>
-
-      <BrandMark pulse={pulse} />
 
       <div className="pv-ls__phone">
         <div className="pv-ls__phone-bezel">

@@ -49,7 +49,6 @@
 
 .pv-ls__eyebrow,
 .pv-ls__hint,
-.pv-ls__badge,
 .pv-ls__url {
   margin: 0;
   font-family: var(--pv-ls-mono);
@@ -60,8 +59,7 @@
 }
 
 .pv-ls[dir="rtl"] .pv-ls__eyebrow,
-.pv-ls[dir="rtl"] .pv-ls__hint,
-.pv-ls[dir="rtl"] .pv-ls__badge {
+.pv-ls[dir="rtl"] .pv-ls__hint {
   font-family: var(--pv-ls-fa);
   letter-spacing: 0;
   text-transform: none;
@@ -94,6 +92,14 @@
 
 .pv-ls[dir="rtl"] .pv-ls__lede {
   line-height: 1.95;
+}
+
+.pv-ls__controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  direction: ltr;
 }
 
 .pv-ls__langs {
@@ -157,7 +163,7 @@
   position: relative;
   isolation: isolate;
   min-width: 0;
-  padding-bottom: 52px;
+  padding-bottom: 28px;
 }
 
 .pv-ls__stage::before {
@@ -173,7 +179,6 @@
 .pv-ls__laptop {
   position: relative;
   z-index: 1;
-  padding-inline-end: 0;
 }
 
 .pv-ls__laptop-bezel {
@@ -221,19 +226,6 @@
   text-transform: none;
 }
 
-.pv-ls__badge {
-  flex: none;
-  color: var(--pv-ls-teal);
-  border: 1px solid rgba(58, 207, 182, 0.35);
-  border-radius: 999px;
-  padding: 4px 9px;
-  letter-spacing: 0.08em;
-  max-width: 12rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .pv-ls__laptop-screen {
   border-radius: 8px 8px 2px 2px;
   overflow: hidden;
@@ -269,22 +261,27 @@
 }
 
 .pv-ls__mark {
-  position: absolute;
-  z-index: 3;
-  inset-inline-end: 16%;
-  top: 38%;
-  width: 52px;
-  height: 52px;
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: 42px;
+  height: 42px;
   pointer-events: none;
-  filter: drop-shadow(0 10px 18px rgba(58, 207, 182, 0.28));
+  filter: drop-shadow(0 8px 14px rgba(58, 207, 182, 0.28));
+}
+
+.pv-ls__mark svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .pv-ls__phone {
   position: absolute;
   z-index: 2;
-  inset-inline-end: 3%;
-  bottom: -6%;
-  width: min(214px, 34%);
+  inset-inline-end: 0;
+  bottom: -12px;
+  width: 176px;
 }
 
 .pv-ls__phone-bezel {
@@ -323,7 +320,6 @@
   border-radius: 18px;
   overflow: hidden;
   background: var(--pv-ls-panel);
-  min-height: 320px;
 }
 
 .pv-ls__home {
@@ -344,8 +340,8 @@
 }
 
 .pv-ls__bakery--mobile {
-  min-height: 320px;
-  padding: 14px 14px 18px;
+  min-height: 0;
+  padding: 12px 12px 14px;
 }
 
 .pv-ls__bakery-inner {
@@ -372,12 +368,6 @@
   color: var(--pv-ls-dim);
 }
 
-.pv-ls__bakery-chip {
-  border: 1px solid var(--pv-ls-line);
-  border-radius: 999px;
-  padding: 3px 8px;
-}
-
 .pv-ls__crumb {
   height: 64px;
   border-radius: 8px;
@@ -388,7 +378,7 @@
 }
 
 .pv-ls__bakery--mobile .pv-ls__crumb {
-  height: 72px;
+  height: 48px;
 }
 
 .pv-ls__bakery h4 {
@@ -430,6 +420,7 @@
 .pv-ls__bakery-cta {
   display: inline-flex;
   align-self: start;
+  justify-self: start;
   margin-top: 6px;
   background: var(--pv-ls-teal);
   color: var(--pv-ls-void);
@@ -502,6 +493,23 @@
   text-align: center;
 }
 
+@media (min-width: 901px) {
+  .pv-ls__stage {
+    padding-inline-end: 100px;
+    padding-bottom: 18px;
+  }
+
+  .pv-ls__phone {
+    width: 158px;
+    inset-inline-end: 8px;
+    bottom: -6px;
+  }
+
+  .pv-ls__bakery:not(.pv-ls__bakery--mobile) {
+    padding-inline-end: 64px;
+  }
+}
+
 @media (max-width: 900px) {
   .pv-ls__grid {
     grid-template-columns: 1fr;
@@ -510,7 +518,7 @@
   .pv-ls__stage {
     display: grid;
     justify-items: center;
-    gap: 10px;
+    gap: 16px;
     padding-bottom: 0;
   }
 
@@ -518,21 +526,10 @@
     width: 100%;
   }
 
-  .pv-ls__mark {
-    position: relative;
-    inset: auto;
-    margin-block: 4px;
-  }
-
   .pv-ls__phone {
     position: relative;
     inset: auto;
     width: min(240px, 72%);
-    margin-top: -8px;
-  }
-
-  .pv-ls__badge {
-    display: none;
   }
 }
 

@@ -22,7 +22,6 @@ export type ChromeCopy = {
   title: string;
   lede: string;
   hint: string;
-  concept: string;
   switcherLabel: string;
 };
 
@@ -43,6 +42,5 @@ export type BakeryCopy = {
   hoursValue: string;
   locationTag: string;
   locationValue: string;
-  orderTag: string;
   products: readonly [BakeryProduct, BakeryProduct, BakeryProduct];
 };

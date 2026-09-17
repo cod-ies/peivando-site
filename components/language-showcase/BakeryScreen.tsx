@@ -46,11 +46,9 @@ export function BakeryScreen({ locale, variant }: BakeryScreenProps) {
                 <span>{copy.navShops}</span>
                 <span>{copy.navContact}</span>
               </>
-            ) : (
-              <span className="pv-ls__bakery-chip">{copy.hoursValue}</span>
-            )}
+            ) : null}
           </div>
-          <div className="pv-ls__crumb" />
+          {variant === "desktop" ? <div className="pv-ls__crumb" /> : null}
           <h4>{copy.headline}</h4>
           <p>{copy.lede}</p>
           <span className="pv-ls__bakery-cta">{copy.cta}</span>
@@ -75,10 +73,6 @@ export function BakeryScreen({ locale, variant }: BakeryScreenProps) {
               <div>
                 <dt>{copy.locationTag}</dt>
                 <dd>{copy.locationValue}</dd>
-              </div>
-              <div>
-                <dt>{copy.orderTag}</dt>
-                <dd>{copy.cta}</dd>
               </div>
             </dl>
           )}

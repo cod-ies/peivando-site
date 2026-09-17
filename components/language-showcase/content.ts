@@ -6,7 +6,6 @@ export const CHROME: Record<ShowcaseLocale, ChromeCopy> = {
     title: "Dieselbe Seite. Vier Sprachen. Echtes RTL.",
     lede: "Laptop und Handy zeigen dieselbe Kundenseite — Deutsch, Englisch, Dari und Farsi. Navigation und Text laufen mit, nicht nur die Wörter.",
     hint: "Sprache wählen. Beide Bildschirme wechseln zusammen.",
-    concept: "Konzeptprojekt",
     switcherLabel: "Demo-Sprache",
   },
   en: {
@@ -14,7 +13,6 @@ export const CHROME: Record<ShowcaseLocale, ChromeCopy> = {
     title: "The same site. Four languages. Real RTL.",
     lede: "Laptop and phone show the same client page — German, English, Dari and Farsi. Navigation and type follow the language, not just the words.",
     hint: "Pick a language. Both screens switch together.",
-    concept: "Concept project",
     switcherLabel: "Demo language",
   },
   prs: {
@@ -22,7 +20,6 @@ export const CHROME: Record<ShowcaseLocale, ChromeCopy> = {
     title: "همان صفحه. چهار زبان. راست‌به‌چپ واقعی.",
     lede: "لپ‌تاپ و موبایل همان صفحهٔ مشتری را نشان می‌دهند — آلمانی، انگلیسی، دری و فارسی. ناوبری و متن با زبان می‌آیند، نه فقط واژه‌ها.",
     hint: "زبان را بگزینید. هر دو صفحه با هم عوض می‌شوند.",
-    concept: "پروژهٔ مفهومی",
     switcherLabel: "زبان نمونه",
   },
   fa: {
@@ -30,7 +27,6 @@ export const CHROME: Record<ShowcaseLocale, ChromeCopy> = {
     title: "همان سایت. چهار زبان. راست‌به‌چپ واقعی.",
     lede: "لپ‌تاپ و گوشی همان صفحهٔ مشتری را نشان می‌دهند — آلمانی، انگلیسی، دری و فارسی. منو و نوشتار با زبان جابه‌جا می‌شوند، نه فقط ترجمهٔ کلمات.",
     hint: "زبان را انتخاب کنید. هر دو صفحه با هم عوض می‌شوند.",
-    concept: "پروژهٔ مفهومی",
     switcherLabel: "زبان نمونه",
   },
 };
@@ -48,7 +44,6 @@ export const BAKERY: Record<ShowcaseLocale, BakeryCopy> = {
     hoursValue: "Täglich 06–18 Uhr",
     locationTag: "Anfahrt",
     locationValue: "Sendling & Haidhausen",
-    orderTag: "Bestellung",
     products: [
       { name: "Bauernbrot", price: "€4,20" },
       { name: "Sesambrötchen", price: "€1,10" },
@@ -67,7 +62,6 @@ export const BAKERY: Record<ShowcaseLocale, BakeryCopy> = {
     hoursValue: "Daily 6am–6pm",
     locationTag: "Directions",
     locationValue: "Sendling & Haidhausen",
-    orderTag: "Orders",
     products: [
       { name: "Farmhouse loaf", price: "€4.20" },
       { name: "Sesame roll", price: "€1.10" },
@@ -86,7 +80,6 @@ export const BAKERY: Record<ShowcaseLocale, BakeryCopy> = {
     hoursValue: "هر روز ۶–۱۸",
     locationTag: "مسیر",
     locationValue: "Sendling & Haidhausen",
-    orderTag: "سفارش",
     products: [
       { name: "نان تنوری", price: "€۴,۲۰" },
       { name: "بولکی کنجدی", price: "€۱,۱۰" },
@@ -105,7 +98,6 @@ export const BAKERY: Record<ShowcaseLocale, BakeryCopy> = {
     hoursValue: "همه‌روزه ۶–۱۸",
     locationTag: "مسیر",
     locationValue: "Sendling & Haidhausen",
-    orderTag: "سفارش",
     products: [
       { name: "نان بربری", price: "€۴٫۲۰" },
       { name: "شیرمال", price: "€۱٫۱۰" },

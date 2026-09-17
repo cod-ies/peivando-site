@@ -41,9 +41,9 @@ export const DEMOS = {
       fa: "نانوایی نوزاد",
     },
     nav: [
-      { de: "Sortiment", en: "Range", prs: "محصولات", fa: "محصولات" },
-      { de: "Filialen", en: "Shops", prs: "شعبه‌ها", fa: "شعبه‌ها" },
-      { de: "Kontakt", en: "Contact", prs: "تماس", fa: "تماس" },
+      { href: "#range", de: "Sortiment", en: "Range", prs: "محصولات", fa: "محصولات" },
+      { href: "#shops", de: "Filialen", en: "Shops", prs: "شعبه‌ها", fa: "شعبه‌ها" },
+      { href: "/#contact", de: "Kontakt", en: "Contact", prs: "تماس", fa: "تماس" },
     ],
     hero: {
       kicker: { de: "München", en: "Munich", prs: "مونیخ", fa: "مونیخ" },
@@ -139,9 +139,9 @@ export const DEMOS = {
       fa: "رستوران افغانستانی",
     },
     nav: [
-      { de: "Speisekarte", en: "Menu", prs: "منو", fa: "منو" },
-      { de: "Reservierung", en: "Booking", prs: "رزرو", fa: "رزرو" },
-      { de: "Anfahrt", en: "Directions", prs: "مسیر", fa: "مسیر" },
+      { href: "#menu", de: "Speisekarte", en: "Menu", prs: "منو", fa: "منو" },
+      { href: "/#contact", de: "Reservierung", en: "Booking", prs: "رزرو", fa: "رزرو" },
+      { href: "#visit", de: "Anfahrt", en: "Directions", prs: "مسیر", fa: "مسیر" },
     ],
     hero: {
       kicker: { de: "Küche aus Kabul · München", en: "Kabul cooking · Munich", prs: "آشپزی کابل · مونیخ", fa: "آشپزی کابل · مونیخ" },
@@ -237,9 +237,9 @@ export const DEMOS = {
       fa: "فروش خودرو",
     },
     nav: [
-      { de: "Fahrzeuge", en: "Vehicles", prs: "موترها", fa: "خودروها" },
-      { de: "Anfrage", en: "Enquiry", prs: "درخواست", fa: "درخواست" },
-      { de: "Kontakt", en: "Contact", prs: "تماس", fa: "تماس" },
+      { href: "#stock", de: "Fahrzeuge", en: "Vehicles", prs: "موترها", fa: "خودروها" },
+      { href: "/#contact", de: "Anfrage", en: "Enquiry", prs: "درخواست", fa: "درخواست" },
+      { href: "/#contact", de: "Kontakt", en: "Contact", prs: "تماس", fa: "تماس" },
     ],
     hero: {
       kicker: { de: "Deutsch & English", en: "German & English", prs: "آلمانی و انگلیسی", fa: "آلمانی و انگلیسی" },
@@ -310,9 +310,9 @@ export const DEMOS = {
       fa: "شرکت نظافت",
     },
     nav: [
-      { de: "Leistungen", en: "Services", prs: "خدمات", fa: "خدمات" },
-      { de: "Gebiet", en: "Area", prs: "ساحه", fa: "محدوده" },
-      { de: "Angebot", en: "Quote", prs: "قیمت", fa: "قیمت" },
+      { href: "#services", de: "Leistungen", en: "Services", prs: "خدمات", fa: "خدمات" },
+      { href: "#area", de: "Gebiet", en: "Area", prs: "ساحه", fa: "محدوده" },
+      { href: "/#contact", de: "Angebot", en: "Quote", prs: "قیمت", fa: "قیمت" },
     ],
     hero: {
       kicker: { de: "Büro · Praxis · Haus", en: "Office · practice · home", prs: "دفتر · کلینیک · خانه", fa: "دفتر · مطب · خانه" },

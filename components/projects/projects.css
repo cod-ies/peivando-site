@@ -219,9 +219,9 @@ body[dir="rtl"] .nav a {
 }
 
 .card {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 14px;
-  align-content: start;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -336,7 +336,7 @@ body[dir="rtl"] .chips li {
   border-radius: 8px;
   border: 1px solid transparent;
   transition: 0.2s;
-  margin-top: 8px;
+  margin-top: auto;
 }
 body[dir="rtl"] .btn { font-family: var(--fa); }
 .btn-fill { background: var(--teal); color: var(--void); font-weight: 700; }

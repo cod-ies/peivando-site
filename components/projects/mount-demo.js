@@ -44,7 +44,12 @@ function renderDemo(root, demoId, lang) {
   const demo = DEMOS[demoId];
   const strings = shellCopy(lang);
   const langs = availableLangs(demoId);
-  const nav = (demo.nav || []).map((item) => `<span>${escapeHtml(t(item, lang))}</span>`).join("");
+  const nav = (demo.nav || [])
+    .map((item) => {
+      const href = item.href || "/#contact";
+      return `<a href="${escapeHtml(href)}">${escapeHtml(t(item, lang))}</a>`;
+    })
+    .join("");
   const buttons = langs
     .map((code) => {
       const label = code === "de" ? "DE" : code === "en" ? "EN" : code === "prs" ? "دری" : "فارسی";

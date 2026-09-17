@@ -1,0 +1,292 @@
+{
+  "meta": {
+    "title": "Peivando — Webdesign & Entwicklung in München",
+    "description": "Mehrsprachiges Webdesign für kleine und internationale Unternehmen in München. Deutsch, Englisch, Dari und Farsi. Websites, die Kunden bringen."
+  },
+  "lang": {
+    "groupLabel": "Sprache",
+    "de": "DE",
+    "en": "EN",
+    "prs": "دری",
+    "fa": "فارسی",
+    "deName": "Deutsch",
+    "enName": "Englisch",
+    "prsName": "Dari",
+    "faName": "Farsi"
+  },
+  "nav": {
+    "services": "Leistungen",
+    "projects": "Projekte",
+    "pricing": "Preise",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "process": "Ablauf",
+    "languages": "Sprachen",
+    "faq": "FAQ"
+  },
+  "cta": {
+    "consult": "Kostenloses Erstgespräch",
+    "projects": "Unsere Projekte ansehen",
+    "offer": "Kostenloses Angebot erhalten",
+    "whatsapp": "Per WhatsApp schreiben",
+    "services": "Leistungen ansehen",
+    "send": "Anfrage senden"
+  },
+  "hero": {
+    "eyebrow": "Webdesign & Entwicklung · München",
+    "title": "Mehrsprachiges Webdesign für Unternehmen in München",
+    "brandLine": "Websites, die in <em>jeder Sprache</em> funktionieren.",
+    "lede": "Mehr Kunden, mehr Anfragen, ein seriöser Auftritt — und gefunden bei Google. Moderne Websites für kleine und internationale Unternehmen, auf Deutsch, Englisch, Dari und Farsi.",
+    "cta1": "Kostenloses Erstgespräch",
+    "cta2": "Unsere Projekte ansehen",
+    "m1": "Pakete ab €399",
+    "m2": "Erstgespräch kostenlos",
+    "m3": "Antwort in 24 Stunden"
+  },
+  "trust": {
+    "mobile": "Mobile",
+    "multilingual": "Mehrsprachig",
+    "seo": "SEO vorbereitet",
+    "whatsapp": "WhatsApp & Formular",
+    "care": "persönliche Betreuung"
+  },
+  "band": {
+    "label": "Wir arbeiten in"
+  },
+  "svc": {
+    "1": {
+      "t": "Website erstellen",
+      "d": "Eine moderne, mobilfreundliche Firmenwebsite — Entwurf, Aufbau, Text-Layout und Übergabe. Sie bekommen die Dateien, nicht nur einen Login.",
+      "p": "ab €399"
+    },
+    "2": {
+      "t": "Mehrsprachige Websites",
+      "d": "Deutsch, Englisch, Dari und Farsi auf einer Seite — mit korrektem Rechts-nach-links-Satz, passenden Schriften und einer Sprachumschaltung, die funktioniert.",
+      "p": "ab €1.290"
+    },
+    "3": {
+      "t": "Landing Pages",
+      "d": "Eine Seite mit einer Aufgabe: aus Besuchern Gespräche machen. Klare Botschaft, ein Handlungsaufruf, nichts, was davon ablenkt.",
+      "p": "auf Anfrage"
+    },
+    "4": {
+      "t": "Redesign & Pflege",
+      "d": "Bestehende Website auffrischen, Inhalte aktualisieren, Fehler beheben. Einmalig oder laufend — Sie entscheiden.",
+      "p": "einmalig o. monatlich"
+    },
+    "eyebrow": "Leistungen",
+    "title": "Vier Dinge, die wir gut machen."
+  },
+  "pkg": {
+    "eyebrow": "Preise",
+    "title": "Drei Pakete, klar abgegrenzt.",
+    "lede": "Startpreise für typische Projekte. Im Gespräch passen wir Umfang und Sprachen an Ihr Geschäft an.",
+    "starter": {
+      "name": "Starter",
+      "tagline": "One Page",
+      "price": "ab €399",
+      "for": "Freelancer und kleine Betriebe",
+      "f1": "Design und Aufbau einer One-Page-Website",
+      "f2": "Mobilfreundlich",
+      "f3": "Kontaktformular",
+      "f4": "WhatsApp-Button",
+      "f5": "Domain anbinden"
+    },
+    "business": {
+      "name": "Business",
+      "tagline": "Professionelle Website",
+      "price": "ab €899",
+      "for": "Firmen mit mehreren Seiten",
+      "f1": "Bis zu 5 Seiten",
+      "f2": "Responsive auf Handy, Tablet und Desktop",
+      "f3": "SEO-Grundlagen",
+      "f4": "Formular und Google Maps",
+      "f5": "Analytics eingerichtet"
+    },
+    "multilingual": {
+      "name": "Multilingual",
+      "tagline": "Deutsch plus eine weitere Sprache",
+      "price": "ab €1.290",
+      "for": "Unternehmen mit Kunden in mehreren Sprachen",
+      "f1": "Deutsch und eine weitere Sprache",
+      "f2": "Echtes RTL für Dari und Farsi",
+      "f3": "Sprachumschalter",
+      "f4": "SEO je Sprache",
+      "f5": "Typografie, die zur Schrift passt"
+    },
+    "cta": "Kostenloses Angebot erhalten"
+  },
+  "proc": {
+    "1": {
+      "t": "Gespräch",
+      "d": "Was macht Ihr Unternehmen, wer soll Sie finden, was fehlt heute. Kostenlos, ohne Verpflichtung."
+    },
+    "2": {
+      "t": "Entwurf",
+      "d": "Struktur und Design für die Startseite. Sie sehen, wie es aussehen wird, bevor gebaut wird."
+    },
+    "3": {
+      "t": "Umsetzung",
+      "d": "Wir bauen, testen auf Handy, Tablet und Desktop und richten Domain, Hosting und E-Mail ein."
+    },
+    "4": {
+      "t": "Launch & Pflege",
+      "d": "Die Seite geht live. Danach: Änderungen, Aktualisierungen und Support — auf Wunsch dauerhaft."
+    },
+    "eyebrow": "Ablauf",
+    "title": "Vom ersten Gespräch bis online.",
+    "lede": "Vier Schritte, in dieser Reihenfolge. Sie wissen jederzeit, woran wir gerade arbeiten."
+  },
+  "lng": {
+    "1": {
+      "t": "Echtes RTL-Layout",
+      "d": "Nicht gespiegelte Grafik, sondern richtige Leserichtung in Navigation, Formularen und Tabellen."
+    },
+    "2": {
+      "t": "Schriften, die passen",
+      "d": "Persische Schrift braucht eigene Laufweiten und Zeilenabstände. Standardschriften machen sie unleserlich."
+    },
+    "3": {
+      "t": "Beratung in Ihrer Sprache",
+      "d": "Sie erklären Ihr Geschäft auf Deutsch, Englisch, Dari oder Farsi — nicht in der Sprache, die gerade übrig ist."
+    },
+    "eyebrow": "Warum Peivando",
+    "title": "Mehrsprachig ist kein Zusatz. Es ist der Grund.",
+    "lede": "Die meisten Agenturen übersetzen den Text und nennen das mehrsprachig. Eine Seite auf Dari oder Farsi läuft von rechts nach links — Layout, Zahlen, Formulare, Navigation. Wir bauen das richtig, weil wir selbst in diesen Sprachen arbeiten.",
+    "hint": "↑ Dieselbe Kundenseite. Sprache oben rechts wechseln."
+  },
+  "dm": {
+    "brand": "Bäckerei Nowzad",
+    "n1": "Sortiment",
+    "n2": "Filialen",
+    "n3": "Kontakt",
+    "h": "Frisches Brot, jeden Morgen um sechs.",
+    "p": "Zwei Filialen in München. Bestellungen für Feiern nehmen wir bis Donnerstag an.",
+    "btn": "Jetzt bestellen",
+    "t1": "Öffnungszeiten",
+    "t2": "Anfahrt",
+    "t3": "Bestellung"
+  },
+  "projects": {
+    "eyebrow": "Projekte",
+    "title": "Ausgewählte Arbeiten",
+    "lede": "Konzeptprojekte zeigen, wie eine Seite in mehreren Sprachen aussehen kann. Keine erfundenen Kundenstimmen.",
+    "concept": "Konzeptprojekt",
+    "cta": "Alle Projekte"
+  },
+  "about": {
+    "eyebrow": "Über uns",
+    "title": "Über Peivando",
+    "lede": "Wir helfen kleinen und internationalen Unternehmen in Deutschland, online Kunden zu gewinnen.",
+    "p1": "Peivando baut Websites, die in Deutsch, Englisch, Dari und Farsi funktionieren — technisch sauber, mobil, mit Formular und WhatsApp, persönlich betreut.",
+    "p2": "Unser Fokus liegt auf Betrieben in und um München, deren Kundschaft mehr als eine Sprache spricht: Gastronomie, Handwerk, Praxen, Handel und lokale Dienstleistungen."
+  },
+  "faq": {
+    "1": {
+      "q": "Was kosten die Pakete?",
+      "a": "Starter ab €399 (One Page), Business ab €899 (bis 5 Seiten), Multilingual ab €1.290 (Deutsch plus eine weitere Sprache, inklusive RTL). Im kostenlosen Erstgespräch klären wir den tatsächlichen Umfang."
+    },
+    "2": {
+      "q": "Welche Sprachen können auf die Website?",
+      "a": "Deutsch, Englisch, Dari und Farsi — inklusive Rechts-nach-links. Weitere Sprachen auf Anfrage."
+    },
+    "3": {
+      "q": "Wie lange dauert es bis zum Launch?",
+      "a": "Eine One-Page oft in wenigen Wochen, sobald Texte und Bilder stehen. Mehrseitige und mehrsprachige Sites brauchen länger. Den Zeitplan nennen wir vor dem Start."
+    },
+    "4": {
+      "q": "Ich habe noch keine Texte und Fotos.",
+      "a": "Kein Problem. Wir legen die Struktur mit Ihnen fest und sagen klar, was von Ihnen kommen muss. Platzhalter ersetzen wir, sobald Material da ist."
+    },
+    "5": {
+      "q": "Sind die Projekte echte Kundenwebsites?",
+      "a": "Arbeiten mit dem Hinweis „Konzeptprojekt“ sind Entwürfe, keine Live-Referenzen. Echte Stimmen veröffentlichen wir nur, wenn sie vorliegen."
+    },
+    "6": {
+      "q": "Für wen ist Peivando gedacht?",
+      "a": "Für kleine und internationale Unternehmen in Deutschland — besonders dann, wenn Ihre Kunden Deutsch, Englisch, Dari oder Farsi sprechen."
+    },
+    "eyebrow": "FAQ",
+    "title": "Häufige Fragen"
+  },
+  "con": {
+    "eyebrow": "Kontakt",
+    "title": "Erzählen Sie uns, was Sie vorhaben.",
+    "lede": "Ein paar Angaben zu Bedarf, Umfang, Sprachen und Budget genügen. Wir melden uns innerhalb von 24 Stunden — auf Deutsch, Englisch, Dari oder Farsi.",
+    "mail": "E-Mail"
+  },
+  "config": {
+    "need": "Was brauchen Sie?",
+    "pages": "Wie viele Seiten?",
+    "languages": "Welche Sprachen?",
+    "budget": "Budget",
+    "cta": "Kostenloses Angebot erhalten",
+    "need1": "Neue Website",
+    "need2": "Mehrsprachige Website",
+    "need3": "Landing Page",
+    "need4": "Redesign oder Pflege",
+    "need5": "Etwas anderes",
+    "pages1": "One Page",
+    "pages2": "Bis 5 Seiten",
+    "pages3": "Mehr als 5 Seiten",
+    "lang1": "Nur Deutsch",
+    "lang2": "Deutsch + Englisch",
+    "lang3": "Deutsch + Dari",
+    "lang4": "Deutsch + Farsi",
+    "lang5": "Mehrere Sprachen",
+    "budget1": "Bis €500",
+    "budget2": "€500–€1.000",
+    "budget3": "€1.000–€2.000",
+    "budget4": "Noch offen"
+  },
+  "f": {
+    "name": "Name",
+    "mail": "E-Mail oder Telefon",
+    "kind": "Worum geht es?",
+    "msg": "Ihr Unternehmen, in ein paar Sätzen",
+    "k1": "Neue Website",
+    "k2": "Mehrsprachige Website",
+    "k3": "Landing Page",
+    "k4": "Redesign oder Pflege",
+    "k5": "Etwas anderes",
+    "send": "Anfrage senden",
+    "privacy": "Ihre Angaben (Name und E-Mail oder Telefon) werden nur zur Beantwortung Ihrer Anfrage verwendet."
+  },
+  "msg": {
+    "sent": "Danke — Ihre Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden.",
+    "miss": "Bitte füllen Sie Name, Kontakt und Nachricht aus.",
+    "off": "Das Formular ist noch nicht verbunden. Schreiben Sie uns solange direkt per WhatsApp oder E-Mail.",
+    "err": "Das hat nicht geklappt. Bitte schreiben Sie uns direkt per WhatsApp oder E-Mail."
+  },
+  "wa": {
+    "prefill": "Hallo Peivando, ich interessiere mich für eine Website."
+  },
+  "legal": {
+    "imprintTitle": "Impressum",
+    "imprintPlaceholder": "Angaben gemäß § 5 TMG werden vom Inhaber ergänzt. Name, Anschrift und Telefon sind hier noch nicht hinterlegt.",
+    "privacyTitle": "Datenschutz",
+    "privacyIntro": "Das Kontaktformular erhebt Name sowie E-Mail-Adresse oder Telefonnummer, um Ihre Anfrage zu beantworten. Eine weitergehende Nutzung erfolgt nicht ohne Ihre Einwilligung."
+  },
+  "foot": {
+    "imp": "Impressum",
+    "dse": "Datenschutz",
+    "tagline": "Websites, die in jeder Sprache funktionieren."
+  },
+  "industries": {
+    "restaurant": "Gastronomie",
+    "craft": "Handwerk",
+    "doctors": "Ärzte",
+    "carDealers": "Autohändler",
+    "salons": "Friseure",
+    "local": "Lokal",
+    "lawyers": "Anwälte",
+    "drivingSchools": "Fahrschulen",
+    "travel": "Reisebüros",
+    "tax": "Steuerberater",
+    "cafe": "Cafés",
+    "retail": "Einzelhandel",
+    "realestate": "Immobilien",
+    "cleaning": "Reinigung",
+    "care": "Pflege"
+  }
+}

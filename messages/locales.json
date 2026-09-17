@@ -1,0 +1,9 @@
+{
+  "defaultLocale": "de",
+  "locales": [
+    { "code": "de", "htmlLang": "de", "dir": "ltr", "switchLabel": "DE", "nativeName": "Deutsch" },
+    { "code": "en", "htmlLang": "en", "dir": "ltr", "switchLabel": "EN", "nativeName": "English" },
+    { "code": "prs", "htmlLang": "prs", "dir": "rtl", "switchLabel": "دری", "nativeName": "دری" },
+    { "code": "fa", "htmlLang": "fa", "dir": "rtl", "switchLabel": "فارسی", "nativeName": "فارسی" }
+  ]
+}

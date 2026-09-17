@@ -297,8 +297,8 @@
       if (node) els.push({ id: ids[i], node: node });
     }
     if (!els.length) return;
-    var headH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--head-h")) || 72;
-    var probe = headH + 28;
+    var headH = headerOffset();
+    var probe = headH + 8;
     var current = "";
     for (var j = 0; j < els.length; j++) {
       if (els[j].node.getBoundingClientRect().top <= probe) current = els[j].id;
@@ -307,12 +307,33 @@
     markSection(current);
   }
 
+  function afterScrollSettles(fn) {
+    var done = false;
+    var finish = function () {
+      if (done) return;
+      done = true;
+      window.removeEventListener("scrollend", finish);
+      fn();
+    };
+    if (prefersReduceMotion()) {
+      window.setTimeout(finish, 40);
+      return;
+    }
+    window.addEventListener("scrollend", finish);
+    window.setTimeout(finish, 1200);
+  }
+
+  function headerOffset() {
+    var raw = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--head-h"));
+    return (raw > 0 ? raw : 72) + 12;
+  }
+
   function scrollToSection(id, updateHash) {
     id = resolveSection(id);
     closeMenu();
+    var behavior = prefersReduceMotion() ? "auto" : "smooth";
     if (!id || id === "top") {
-      var topBehavior = prefersReduceMotion() ? "auto" : "smooth";
-      window.scrollTo({ top: 0, behavior: topBehavior });
+      window.scrollTo({ top: 0, behavior: behavior });
       if (updateHash) history.pushState(null, "", location.pathname + location.search);
       spyLock = "";
       markSection("");
@@ -322,13 +343,13 @@
     if (!el) return false;
     spyLock = id;
     markSection(id);
-    var behavior = prefersReduceMotion() ? "auto" : "smooth";
-    el.scrollIntoView({ behavior: behavior, block: "start" });
+    var top = window.scrollY + el.getBoundingClientRect().top - headerOffset();
+    window.scrollTo({ top: Math.max(0, top), behavior: behavior });
     if (updateHash) history.pushState(null, "", "#" + id);
-    window.setTimeout(function () {
+    afterScrollSettles(function () {
       spyLock = "";
       spySections();
-    }, prefersReduceMotion() ? 50 : 650);
+    });
     return true;
   }
 

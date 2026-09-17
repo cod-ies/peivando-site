@@ -1,0 +1,292 @@
+{
+  "meta": {
+    "title": "Peivando — Web design & development in Munich",
+    "description": "Multilingual web design for small and international businesses in Munich. German, English, Dari and Farsi. Websites that win customers."
+  },
+  "lang": {
+    "groupLabel": "Language",
+    "de": "DE",
+    "en": "EN",
+    "prs": "دری",
+    "fa": "فارسی",
+    "deName": "German",
+    "enName": "English",
+    "prsName": "Dari",
+    "faName": "Farsi"
+  },
+  "nav": {
+    "services": "Services",
+    "projects": "Projects",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "process": "Process",
+    "languages": "Languages",
+    "faq": "FAQ"
+  },
+  "cta": {
+    "consult": "Free first conversation",
+    "projects": "See our projects",
+    "offer": "Get a free quote",
+    "whatsapp": "Message us on WhatsApp",
+    "services": "See what we do",
+    "send": "Send enquiry"
+  },
+  "hero": {
+    "eyebrow": "Web design & development · Munich",
+    "title": "Multilingual web design for businesses in Munich",
+    "brandLine": "Websites that work in <em>every language</em>.",
+    "lede": "More customers, more enquiries, a professional presence — and found on Google. Modern websites for small and international businesses, in German, English, Dari and Farsi.",
+    "cta1": "Free first conversation",
+    "cta2": "See our projects",
+    "m1": "Packages from €399",
+    "m2": "First conversation free",
+    "m3": "Reply within 24 hours"
+  },
+  "trust": {
+    "mobile": "Mobile",
+    "multilingual": "Multilingual",
+    "seo": "SEO-ready",
+    "whatsapp": "WhatsApp & form",
+    "care": "Personal support"
+  },
+  "band": {
+    "label": "We work in"
+  },
+  "svc": {
+    "1": {
+      "t": "Build a website",
+      "d": "A modern, mobile-friendly business website — design, build, text layout and handover. You get the files, not just a login.",
+      "p": "from €399"
+    },
+    "2": {
+      "t": "Multilingual websites",
+      "d": "German, English, Dari and Farsi on one site — with correct right-to-left typesetting, the right fonts, and a language switch that actually works.",
+      "p": "from €1,290"
+    },
+    "3": {
+      "t": "Landing pages",
+      "d": "One page with one job: turning visitors into conversations. Clear message, one call to action, nothing competing for attention.",
+      "p": "on request"
+    },
+    "4": {
+      "t": "Redesign & maintenance",
+      "d": "Refresh an existing site, update content, fix what's broken. One-off or ongoing — your choice.",
+      "p": "one-off or monthly"
+    },
+    "eyebrow": "Services",
+    "title": "Four things we do well."
+  },
+  "pkg": {
+    "eyebrow": "Pricing",
+    "title": "Three packages, clearly scoped.",
+    "lede": "Starting prices for typical projects. On a call we fit scope and languages to your business.",
+    "starter": {
+      "name": "Starter",
+      "tagline": "One page",
+      "price": "from €399",
+      "for": "Freelancers and small businesses",
+      "f1": "Design and build of a one-page site",
+      "f2": "Mobile-friendly",
+      "f3": "Contact form",
+      "f4": "WhatsApp button",
+      "f5": "Domain connected"
+    },
+    "business": {
+      "name": "Business",
+      "tagline": "Professional site",
+      "price": "from €899",
+      "for": "Companies that need several pages",
+      "f1": "Up to 5 pages",
+      "f2": "Responsive on phone, tablet and desktop",
+      "f3": "SEO basics",
+      "f4": "Form and Google Maps",
+      "f5": "Analytics set up"
+    },
+    "multilingual": {
+      "name": "Multilingual",
+      "tagline": "German plus one more language",
+      "price": "from €1,290",
+      "for": "Businesses whose customers speak more than one language",
+      "f1": "German and one additional language",
+      "f2": "Real RTL for Dari and Farsi",
+      "f3": "Language switcher",
+      "f4": "SEO per language",
+      "f5": "Typography that fits the script"
+    },
+    "cta": "Get a free quote"
+  },
+  "proc": {
+    "1": {
+      "t": "Talk",
+      "d": "What your business does, who should find you, what's missing today. Free, no obligation."
+    },
+    "2": {
+      "t": "Design",
+      "d": "Structure and design for the front page. You see how it will look before anything gets built."
+    },
+    "3": {
+      "t": "Build",
+      "d": "We build it, test on phone, tablet and desktop, and set up domain, hosting and email."
+    },
+    "4": {
+      "t": "Launch & care",
+      "d": "The site goes live. After that: changes, updates and support — ongoing if you want it."
+    },
+    "eyebrow": "Process",
+    "title": "From first call to live.",
+    "lede": "Four steps, in this order. You always know what we're working on."
+  },
+  "lng": {
+    "1": {
+      "t": "Real RTL layout",
+      "d": "Not mirrored graphics — proper reading direction in navigation, forms and tables."
+    },
+    "2": {
+      "t": "Fonts that fit",
+      "d": "Persian script needs its own spacing and line height. Default fonts make it hard to read."
+    },
+    "3": {
+      "t": "Advice in your language",
+      "d": "Explain your business in German, English, Dari or Farsi — not whichever language is left over."
+    },
+    "eyebrow": "Why Peivando",
+    "title": "Multilingual isn't an add-on. It's the reason.",
+    "lede": "Most agencies translate the text and call it multilingual. A site in Dari or Farsi runs right to left — layout, numbers, forms, navigation. We build that properly, because we work in these languages ourselves.",
+    "hint": "↑ The same client page. Switch language at the top right."
+  },
+  "dm": {
+    "brand": "Nowzad Bakery",
+    "n1": "Range",
+    "n2": "Shops",
+    "n3": "Contact",
+    "h": "Fresh bread, every morning at six.",
+    "p": "Two shops in Munich. Orders for celebrations taken until Thursday.",
+    "btn": "Order now",
+    "t1": "Opening hours",
+    "t2": "Directions",
+    "t3": "Orders"
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "Selected work",
+    "lede": "Concept projects show how a site can look in several languages. No invented client quotes.",
+    "concept": "Concept project",
+    "cta": "All projects"
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "About Peivando",
+    "lede": "We help small and international businesses in Germany win customers online.",
+    "p1": "Peivando builds websites that work in German, English, Dari and Farsi — technically clean, mobile, with a form and WhatsApp, and personal support.",
+    "p2": "We focus on businesses in and around Munich whose customers speak more than one language: restaurants, trades, clinics, retail and local services."
+  },
+  "faq": {
+    "1": {
+      "q": "What do the packages cost?",
+      "a": "Starter from €399 (one page), Business from €899 (up to 5 pages), Multilingual from €1,290 (German plus one more language, including RTL). The free first conversation clarifies the real scope."
+    },
+    "2": {
+      "q": "Which languages can the site use?",
+      "a": "German, English, Dari and Farsi — including right-to-left. Further languages on request."
+    },
+    "3": {
+      "q": "How long until launch?",
+      "a": "A one-page site often takes a few weeks once copy and images are ready. Multi-page and multilingual sites take longer. We give a timeline before we start."
+    },
+    "4": {
+      "q": "I don't have text or photos yet.",
+      "a": "That's fine. We map the pages with you and say clearly what you need to provide. Placeholders get replaced when the material arrives."
+    },
+    "5": {
+      "q": "Are the projects real client sites?",
+      "a": "Work labelled “Concept project” is a design study, not a live reference. We only publish real testimonials when we have them."
+    },
+    "6": {
+      "q": "Who is Peivando for?",
+      "a": "Small and international businesses in Germany — especially when your customers speak German, English, Dari or Farsi."
+    },
+    "eyebrow": "FAQ",
+    "title": "Common questions"
+  },
+  "con": {
+    "eyebrow": "Contact",
+    "title": "Tell us what you have in mind.",
+    "lede": "A few details on need, pages, languages and budget are enough. We reply within 24 hours — in German, English, Dari or Farsi.",
+    "mail": "Email"
+  },
+  "config": {
+    "need": "What do you need?",
+    "pages": "How many pages?",
+    "languages": "Which languages?",
+    "budget": "Budget",
+    "cta": "Get a free quote",
+    "need1": "New website",
+    "need2": "Multilingual website",
+    "need3": "Landing page",
+    "need4": "Redesign or maintenance",
+    "need5": "Something else",
+    "pages1": "One page",
+    "pages2": "Up to 5 pages",
+    "pages3": "More than 5 pages",
+    "lang1": "German only",
+    "lang2": "German + English",
+    "lang3": "German + Dari",
+    "lang4": "German + Farsi",
+    "lang5": "Several languages",
+    "budget1": "Up to €500",
+    "budget2": "€500–€1,000",
+    "budget3": "€1,000–€2,000",
+    "budget4": "Not sure yet"
+  },
+  "f": {
+    "name": "Name",
+    "mail": "Email or phone",
+    "kind": "What is it about?",
+    "msg": "Your business, in a few sentences",
+    "k1": "New website",
+    "k2": "Multilingual website",
+    "k3": "Landing page",
+    "k4": "Redesign or maintenance",
+    "k5": "Something else",
+    "send": "Send enquiry",
+    "privacy": "Your details (name and email or phone) are used only to answer your enquiry."
+  },
+  "msg": {
+    "sent": "Thank you — your enquiry has arrived. We'll reply within 24 hours.",
+    "miss": "Please fill in name, contact and message.",
+    "off": "The form isn't connected yet. Please write to us on WhatsApp or by email in the meantime.",
+    "err": "That didn't go through. Please write to us on WhatsApp or by email."
+  },
+  "wa": {
+    "prefill": "Hello Peivando, I'm interested in a website."
+  },
+  "legal": {
+    "imprintTitle": "Impressum",
+    "imprintPlaceholder": "Details required under § 5 TMG will be added by the owner. Name, address and phone are not listed here yet.",
+    "privacyTitle": "Privacy",
+    "privacyIntro": "The contact form collects your name and an email address or phone number in order to answer your enquiry. We do not use this data for anything else without your consent."
+  },
+  "foot": {
+    "imp": "Impressum",
+    "dse": "Privacy",
+    "tagline": "Websites that work in every language."
+  },
+  "industries": {
+    "restaurant": "Restaurants",
+    "craft": "Trades",
+    "doctors": "Doctors",
+    "carDealers": "Car dealers",
+    "salons": "Salons",
+    "local": "Local",
+    "lawyers": "Lawyers",
+    "drivingSchools": "Driving schools",
+    "travel": "Travel",
+    "tax": "Tax advisors",
+    "cafe": "Cafés",
+    "retail": "Retail",
+    "realestate": "Real estate",
+    "cleaning": "Cleaning",
+    "care": "Care"
+  }
+}

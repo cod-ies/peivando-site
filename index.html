@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Peivando baut moderne, schnelle Websites für kleine Unternehmen in München — auf Deutsch, Englisch, Dari und Farsi. Projekte ab 100 US$.">
+<meta name="theme-color" content="#050C12">
+<link rel="canonical" href="https://peivando.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Peivando">
+<meta property="og:title" content="Peivando — Webdesign &amp; Entwicklung, München">
+<meta property="og:description" content="Moderne, schnelle Websites für kleine Unternehmen — auf Deutsch, Englisch, Dari und Farsi.">
+<meta property="og:url" content="https://peivando.com/">
+<meta property="og:image" content="https://peivando.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='9' fill='%23050C12'/%3E%3Cg fill='%233ACFB6'%3E%3Ccircle cx='20' cy='9' r='2.2'/%3E%3Ccircle cx='29.5' cy='14.5' r='2.2'/%3E%3Ccircle cx='29.5' cy='25.5' r='2.2'/%3E%3Ccircle cx='20' cy='31' r='2.2'/%3E%3Ccircle cx='10.5' cy='25.5' r='2.2'/%3E%3Ccircle cx='10.5' cy='14.5' r='2.2'/%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root{color-scheme:dark}
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"Peivando",
+  "description":"Webdesign und Webentwicklung für kleine Unternehmen — Deutsch, Englisch, Dari, Farsi.",
+  "url":"https://peivando.com/",
+  "email":"info@peivando.com",
+  "image":"https://peivando.com/og-image.png",
+  "priceRange":"ab 100 USD",
+  "areaServed":{"@type":"City","name":"München"},
+  "address":{"@type":"PostalAddress","addressLocality":"München","addressCountry":"DE"},
+  "knowsLanguage":["de","en","fa","prs"],
+  "sameAs":["https://www.facebook.com/peivando"]
+}
+</script>
+<title>Peivando — Webdesign &amp; Entwicklung in München</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Vazirmatn:wght@400;500;700&display=swap">
+<style>
+/* Peivando — committed dark identity, drawn from the logo's navy + teal. */
+:root{
+  --void:#050C12;
+  --panel:#0A1621;
+  --panel-2:#10212D;
+  --line:#1A3141;
+  --line-soft:#132635;
+  --ink:#EEF5F5;
+  --ink-2:#A3BCC3;
+  --dim:#6A8894;
+  --teal:#3ACFB6;
+  --teal-2:#7FE6D3;
+  --teal-deep:#0E7A6C;
+  --display:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --ui:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+  --fa:'Vazirmatn','Noto Naskh Arabic',Tahoma,sans-serif;
+  --maxw:78rem;
+  --gut:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--void);color:var(--ink);
+  font-family:var(--ui);font-size:1.0625rem;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img{max-width:100%}
+a{color:inherit}
+::selection{background:var(--teal);color:var(--void)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:3px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+body[dir="rtl"]{font-family:var(--fa);line-height:1.95}
+body[dir="rtl"] h1,body[dir="rtl"] h2,body[dir="rtl"] h3,body[dir="rtl"] .num{font-family:var(--fa);letter-spacing:0}
+body[dir="rtl"] .mono{font-family:var(--fa);letter-spacing:0;text-transform:none}
+
+.wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
+.mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+
+h1,h2{font-family:var(--display);font-weight:400;letter-spacing:-.018em;line-height:1.02;text-wrap:balance;margin:0}
+h1{font-size:clamp(3rem,8.4vw,6.5rem)}
+h2{font-size:clamp(2.1rem,4.6vw,3.6rem)}
+h3{font-family:var(--ui);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;margin:0;line-height:1.35}
+p{margin:0}
+.lede{font-size:clamp(1.05rem,1.55vw,1.22rem);color:var(--ink-2);max-width:54ch;line-height:1.62}
+
+/* ───────── header ───────── */
+.head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;transition:background .3s,border-color .3s}
+.head.stuck{background:rgba(5,12,18,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.head-in{display:flex;align-items:center;gap:18px;min-height:72px;flex-wrap:wrap;padding-block:12px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto}
+.brand b{font-family:var(--ui);font-weight:700;font-size:1.22rem;letter-spacing:-.03em}
+.nav{display:flex;gap:26px}
+.nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s}
+body[dir="rtl"] .nav a{font-family:var(--fa);letter-spacing:0;text-transform:none;font-size:.95rem}
+.nav a:hover{color:var(--teal)}
+@media (max-width:820px){.nav{display:none}}
+.langs{display:flex;gap:1px;border:1px solid var(--line);border-radius:999px;padding:3px;background:rgba(10,22,33,.7)}
+.langs button{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  border:0;background:transparent;color:var(--dim);padding:7px 14px;border-radius:999px;cursor:pointer;transition:.2s;
+}
+.langs button[data-l="fa"]{font-family:var(--fa);letter-spacing:0;text-transform:none;font-size:.88rem}
+.langs button[aria-pressed="true"]{background:var(--teal);color:var(--void);font-weight:500}
+.langs button:hover:not([aria-pressed="true"]){color:var(--ink)}
+
+/* ───────── hero ───────── */
+.hero{position:relative;isolation:isolate;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;z-index:-2;display:block}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(58% 62% at 22% 42%, rgba(5,12,18,.92), rgba(5,12,18,.45) 55%, transparent 78%),
+    linear-gradient(to bottom, transparent 55%, var(--void) 98%);
+}
+.hero-in{padding-block:clamp(60px,10vw,132px) clamp(64px,9vw,120px);max-width:min(100%,64rem)}
+.hero h1{margin-top:20px}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero .lede{margin-top:26px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;
+  font-family:var(--ui);font-weight:500;font-size:.95rem;
+  padding:14px 22px;border-radius:8px;border:1px solid transparent;transition:.2s;
+}
+body[dir="rtl"] .btn{font-family:var(--fa)}
+.btn-fill{background:var(--teal);color:var(--void);font-weight:700}
+.btn-fill:hover{background:var(--teal-2)}
+.btn-line{border-color:var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--teal);color:var(--teal)}
+.btn svg{flex:none}
+.meta{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:26px}
+
+/* language band */
+.band{border-block:1px solid var(--line-soft);background:var(--panel)}
+.band-in{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px 30px;padding-block:20px}
+.band .tongue{font-size:1.15rem;color:var(--ink)}
+.band .tongue.fa{font-family:var(--fa)}
+.band .sep{color:var(--teal);opacity:.6}
+
+/* ───────── sections ───────── */
+section{padding-block:clamp(66px,9vw,118px)}
+.sec-head{display:grid;gap:18px;max-width:58ch;margin-bottom:clamp(38px,5vw,60px)}
+
+/* services */
+.svc{
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px 30px;align-items:baseline;
+  padding:26px 18px;border-top:1px solid var(--line-soft);position:relative;
+  transition:background .25s;border-radius:8px;
+}
+.svc:last-of-type{border-bottom:1px solid var(--line-soft)}
+.svc:hover{background:var(--panel)}
+.num{font-family:var(--mono);font-size:.78rem;color:var(--teal);letter-spacing:.06em}
+.svc-b{display:grid;gap:9px}
+.svc-b p{color:var(--ink-2);max-width:56ch;font-size:1rem}
+.price{font-family:var(--mono);font-size:.76rem;color:var(--ink);white-space:nowrap;letter-spacing:.04em;
+  border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+body[dir="rtl"] .price{font-family:var(--fa);letter-spacing:0}
+@media (max-width:720px){
+  .svc{grid-template-columns:auto minmax(0,1fr);padding-inline:6px}
+  .price{grid-column:2;justify-self:start}
+}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px}
+@media (max-width:900px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+.step{display:grid;gap:11px;padding-top:26px;position:relative}
+.step::before{content:"";position:absolute;inset-inline:0;top:0;height:1px;background:var(--line)}
+.step::after{content:"";position:absolute;inset-inline-start:0;top:-3.5px;width:7px;height:7px;border-radius:50%;background:var(--teal)}
+.step p{color:var(--ink-2);font-size:.97rem}
+
+/* languages + demo */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr);gap:clamp(34px,5vw,64px);align-items:center}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
+.feat{display:grid;gap:18px;margin:26px 0 0;padding:0;list-style:none}
+.feat li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px}
+.feat strong{display:block;font-weight:700;font-size:1rem;margin-bottom:3px}
+.feat span{color:var(--ink-2);font-size:.97rem}
+.tick{margin-top:6px;flex:none}
+
+/* browser demo */
+.frame{
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);
+  box-shadow:0 30px 70px -30px rgba(0,0,0,.85), 0 0 0 1px rgba(58,207,182,.06);
+}
+.chrome{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line-soft);background:var(--panel-2)}
+.dots{display:flex;gap:6px}
+.dots i{width:9px;height:9px;border-radius:50%;background:var(--line);display:block}
+.url{
+  flex:1;text-align:center;font-family:var(--mono);font-size:.68rem;color:var(--dim);
+  background:var(--void);border-radius:5px;padding:5px 10px;letter-spacing:.04em;direction:ltr;
+}
+.screen{padding:26px 24px 30px;min-height:290px;transition:opacity .28s}
+.screen.flip{opacity:0}
+.screen .s-nav{display:flex;gap:18px;align-items:center;margin-bottom:28px;flex-wrap:wrap}
+.screen .s-nav b{font-weight:700;font-size:.95rem;margin-inline-end:auto}
+.screen .s-nav span{font-size:.76rem;color:var(--dim)}
+.screen h4{font-family:var(--display);font-weight:400;font-size:clamp(1.5rem,3vw,2.05rem);line-height:1.1;margin:0 0 12px;letter-spacing:-.015em}
+body[dir="rtl"] .screen h4{font-family:var(--fa);line-height:1.5}
+.screen p{color:var(--ink-2);font-size:.95rem;max-width:40ch}
+.s-btn{display:inline-block;margin-top:20px;background:var(--teal);color:var(--void);font-weight:700;font-size:.85rem;padding:9px 16px;border-radius:6px}
+.s-rule{height:1px;background:var(--line-soft);margin:24px 0 16px}
+.s-tags{display:flex;gap:8px;flex-wrap:wrap}
+.s-tags span{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
+body[dir="rtl"] .s-tags span{font-family:var(--fa);letter-spacing:0;font-size:.78rem}
+
+/* contact */
+.contact{background:var(--panel);border-top:1px solid var(--line-soft)}
+.c-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,60px);align-items:start}
+@media (max-width:900px){.c-grid{grid-template-columns:1fr}}
+.chans{display:grid;gap:11px;margin-top:30px}
+.chan{display:flex;align-items:center;gap:14px;text-decoration:none;border:1px solid var(--line);
+  border-radius:10px;background:var(--void);padding:15px 17px;transition:.2s}
+.chan:hover{border-color:var(--teal);transform:translateY(-1px)}
+.chan-t{display:grid;gap:2px;min-width:0}
+.chan-t b{font-size:.95rem;font-weight:700}
+.chan-t span{font-family:var(--mono);font-size:.73rem;color:var(--dim);word-break:break-all;direction:ltr;display:block}
+body[dir="rtl"] .chan-t span{text-align:right}
+
+form{display:grid;gap:16px;border:1px solid var(--line);border-radius:14px;background:var(--void);padding:clamp(22px,3vw,32px)}
+.field{display:grid;gap:7px}
+label{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+body[dir="rtl"] label{font-family:var(--fa);letter-spacing:0;text-transform:none;font-size:.88rem}
+input,textarea,select{
+  font-family:inherit;font-size:1rem;color:var(--ink);background:var(--panel-2);
+  border:1px solid var(--line);border-radius:8px;padding:12px 14px;width:100%;transition:border-color .2s;
+}
+select option{background:var(--panel-2);color:var(--ink)}
+textarea{min-height:124px;resize:vertical}
+input:focus,textarea:focus,select:focus{border-color:var(--teal);outline:none}
+.note{font-family:var(--mono);font-size:.71rem;color:var(--dim);line-height:1.65}
+body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
+.msg{display:none;font-size:.95rem;padding:13px 15px;border-radius:8px;line-height:1.5}
+.msg.show{display:block}
+.msg.ok{background:rgba(58,207,182,.12);color:var(--teal-2);border:1px solid rgba(58,207,182,.3)}
+.msg.warn{background:var(--panel-2);color:var(--ink-2);border:1px solid var(--line)}
+
+footer{border-top:1px solid var(--line-soft);padding-block:44px 52px;background:var(--panel)}
+.foot{display:flex;flex-wrap:wrap;gap:18px 32px;align-items:baseline;justify-content:space-between}
+.foot a{text-decoration:none}
+.foot .links{display:flex;gap:22px;flex-wrap:wrap}
+.foot .links a:hover{color:var(--teal)}
+.todo{color:var(--teal);border-bottom:1px dashed rgba(58,207,182,.5)}
+</style>
+</head>
+<body>
+<header class="head" id="head">
+  <div class="wrap head-in">
+    <a class="brand" href="#top" aria-label="Peivando">
+      <svg width="27" height="27" viewBox="0 0 40 40" aria-hidden="true">
+        <g fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round">
+          <path d="M20 20 20 8M20 20 30.4 14M20 20 30.4 26M20 20 20 32M20 20 9.6 26M20 20 9.6 14" opacity=".5"/>
+          <path d="M20 8 30.4 14 30.4 26 20 32 9.6 26 9.6 14Z" opacity=".28"/>
+        </g>
+        <g fill="var(--teal)">
+          <circle cx="20" cy="8" r="2.3"/><circle cx="30.4" cy="14" r="2.3"/><circle cx="30.4" cy="26" r="2.3"/>
+          <circle cx="20" cy="32" r="2.3"/><circle cx="9.6" cy="26" r="2.3"/><circle cx="9.6" cy="14" r="2.3"/>
+          <circle cx="20" cy="20" r="3.9"/>
+        </g>
+      </svg>
+      <b>Peivando</b>
+    </a>
+    <nav class="nav">
+      <a href="#services" data-i="nav.services">Leistungen</a>
+      <a href="#process" data-i="nav.process">Ablauf</a>
+      <a href="#languages" data-i="nav.languages">Sprachen</a>
+      <a href="#contact" data-i="nav.contact">Kontakt</a>
+    </nav>
+    <div class="langs" role="group" aria-label="Sprache / Language">
+      <button type="button" data-l="de" aria-pressed="true">DE</button>
+      <button type="button" data-l="en" aria-pressed="false">EN</button>
+      <button type="button" data-l="fa" aria-pressed="false">دری</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<div class="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <p class="mono" data-i="hero.eyebrow">Webdesign &amp; Entwicklung · München</p>
+    <h1 data-i="hero.title" data-html>Websites, die in <em>jeder Sprache</em> funktionieren.</h1>
+    <p class="lede" data-i="hero.lede">Moderne, schnelle Websites für kleine Unternehmen — auf Deutsch, Englisch, Dari und Farsi. Von der ersten Seite bis zur laufenden Pflege.</p>
+    <div class="cta">
+      <a class="btn btn-fill" id="cta-wa" href="#contact">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7 1-.1.1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3c-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1Z"/></svg>
+        <span data-i="hero.cta1">Per WhatsApp schreiben</span>
+      </a>
+      <a class="btn btn-line" href="#services"><span data-i="hero.cta2">Leistungen ansehen</span></a>
+    </div>
+    <div class="meta">
+      <span class="mono" data-i="hero.m1">Projekte ab 100 US$</span>
+      <span class="mono" data-i="hero.m2">Erstgespräch kostenlos</span>
+      <span class="mono" data-i="hero.m3">Antwort in 24 Stunden</span>
+    </div>
+  </div>
+</div>
+
+<div class="band">
+  <div class="wrap band-in">
+    <span class="mono" data-i="band.label">Wir arbeiten in</span>
+    <span class="tongue">Deutsch</span><span class="sep">/</span>
+    <span class="tongue">English</span><span class="sep">/</span>
+    <span class="tongue fa">دری</span><span class="sep">/</span>
+    <span class="tongue fa">فارسی</span>
+  </div>
+</div>
+
+<section id="services" class="wrap">
+  <div class="sec-head">
+    <p class="mono" data-i="svc.eyebrow">Leistungen</p>
+    <h2 data-i="svc.title">Vier Dinge, die wir gut machen.</h2>
+  </div>
+  <article class="svc">
+    <span class="num">01</span>
+    <div class="svc-b"><h3 data-i="svc.1.t">Website erstellen</h3>
+      <p data-i="svc.1.d">Eine moderne, mobilfreundliche Firmenwebsite — Entwurf, Aufbau, Text-Layout und Übergabe. Sie bekommen die Dateien, nicht nur einen Login.</p></div>
+    <span class="price" data-i="svc.1.p">ab 100 US$</span>
+  </article>
+  <article class="svc">
+    <span class="num">02</span>
+    <div class="svc-b"><h3 data-i="svc.2.t">Mehrsprachige Websites</h3>
+      <p data-i="svc.2.d">Deutsch, Englisch, Dari und Farsi auf einer Seite — mit korrektem Rechts-nach-links-Satz, passenden Schriften und einer Sprachumschaltung, die funktioniert.</p></div>
+    <span class="price" data-i="svc.2.p">auf Anfrage</span>
+  </article>
+  <article class="svc">
+    <span class="num">03</span>
+    <div class="svc-b"><h3 data-i="svc.3.t">Landing Pages</h3>
+      <p data-i="svc.3.d">Eine Seite mit einer Aufgabe: aus Besuchern Gespräche machen. Klare Botschaft, ein Handlungsaufruf, nichts, was davon ablenkt.</p></div>
+    <span class="price" data-i="svc.3.p">auf Anfrage</span>
+  </article>
+  <article class="svc">
+    <span class="num">04</span>
+    <div class="svc-b"><h3 data-i="svc.4.t">Redesign &amp; Pflege</h3>
+      <p data-i="svc.4.d">Bestehende Website auffrischen, Inhalte aktualisieren, Fehler beheben. Einmalig oder laufend — Sie entscheiden.</p></div>
+    <span class="price" data-i="svc.4.p">einmalig o. monatlich</span>
+  </article>
+</section>
+
+<section id="process" class="wrap">
+  <div class="sec-head">
+    <p class="mono" data-i="proc.eyebrow">Ablauf</p>
+    <h2 data-i="proc.title">Vom ersten Gespräch bis online.</h2>
+    <p class="lede" data-i="proc.lede">Vier Schritte, in dieser Reihenfolge. Sie wissen jederzeit, woran wir gerade arbeiten.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="mono">01</span><h3 data-i="proc.1.t">Gespräch</h3><p data-i="proc.1.d">Was macht Ihr Unternehmen, wer soll Sie finden, was fehlt heute. Kostenlos, ohne Verpflichtung.</p></div>
+    <div class="step"><span class="mono">02</span><h3 data-i="proc.2.t">Entwurf</h3><p data-i="proc.2.d">Struktur und Design für die Startseite. Sie sehen, wie es aussehen wird, bevor gebaut wird.</p></div>
+    <div class="step"><span class="mono">03</span><h3 data-i="proc.3.t">Umsetzung</h3><p data-i="proc.3.d">Wir bauen, testen auf Handy, Tablet und Desktop und richten Domain, Hosting und E-Mail ein.</p></div>
+    <div class="step"><span class="mono">04</span><h3 data-i="proc.4.t">Launch &amp; Pflege</h3><p data-i="proc.4.d">Die Seite geht live. Danach: Änderungen, Aktualisierungen und Support — auf Wunsch dauerhaft.</p></div>
+  </div>
+</section>
+
+<section id="languages" class="wrap">
+  <div class="split">
+    <div>
+      <p class="mono" data-i="lng.eyebrow">Warum Peivando</p>
+      <h2 style="margin-top:16px" data-i="lng.title">Mehrsprachig ist kein Zusatz. Es ist der Grund.</h2>
+      <p class="lede" style="margin-top:20px" data-i="lng.lede">Die meisten Agenturen übersetzen den Text und nennen das mehrsprachig. Eine Seite auf Dari oder Farsi läuft von rechts nach links — Layout, Zahlen, Formulare, Navigation. Wir bauen das richtig, weil wir selbst in diesen Sprachen arbeiten.</p>
+      <ul class="feat">
+        <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5 6 12.5 14 3.5" fill="none" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><strong data-i="lng.1.t">Echtes RTL-Layout</strong><span data-i="lng.1.d">Nicht gespiegelte Grafik, sondern richtige Leserichtung in Navigation, Formularen und Tabellen.</span></div></li>
+        <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5 6 12.5 14 3.5" fill="none" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><strong data-i="lng.2.t">Schriften, die passen</strong><span data-i="lng.2.d">Persische Schrift braucht eigene Laufweiten und Zeilenabstände. Standardschriften machen sie unleserlich.</span></div></li>
+        <li><svg class="tick" width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8.5 6 12.5 14 3.5" fill="none" stroke="var(--teal)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div><strong data-i="lng.3.t">Beratung in Ihrer Sprache</strong><span data-i="lng.3.d">Sie erklären Ihr Geschäft auf Deutsch, Englisch, Dari oder Farsi — nicht in der Sprache, die gerade übrig ist.</span></div></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="frame">
+        <div class="chrome">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <div class="url">peivando.com</div>
+        </div>
+        <div class="screen" id="screen">
+          <div class="s-nav">
+            <b data-i="dm.brand">Bäckerei Nowzad</b>
+            <span data-i="dm.n1">Sortiment</span><span data-i="dm.n2">Filialen</span><span data-i="dm.n3">Kontakt</span>
+          </div>
+          <h4 data-i="dm.h">Frisches Brot, jeden Morgen um sechs.</h4>
+          <p data-i="dm.p">Zwei Filialen in München. Bestellungen für Feiern nehmen wir bis Donnerstag an.</p>
+          <span class="s-btn" data-i="dm.btn">Jetzt bestellen</span>
+          <div class="s-rule"></div>
+          <div class="s-tags"><span data-i="dm.t1">Öffnungszeiten</span><span data-i="dm.t2">Anfahrt</span><span data-i="dm.t3">Bestellung</span></div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:16px;text-align:center" data-i="lng.hint">↑ Dieselbe Kundenseite. Sprache oben rechts wechseln.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap c-grid">
+    <div>
+      <p class="mono" data-i="con.eyebrow">Kontakt</p>
+      <h2 style="margin-top:16px" data-i="con.title">Erzählen Sie uns, was Sie vorhaben.</h2>
+      <p class="lede" style="margin-top:18px" data-i="con.lede">Ein paar Sätze über Ihr Unternehmen genügen. Wir melden uns innerhalb von 24 Stunden — auf Deutsch, Englisch, Dari oder Farsi.</p>
+      <div class="chans">
+        <a class="chan" id="ch-wa" href="#">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--teal)" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7 1-.1.1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3c-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1Z"/></svg>
+          <span class="chan-t"><b>WhatsApp</b><span id="wa-num">+93 74 797 0495</span></span>
+        </a>
+        <a class="chan" id="ch-mail" href="#">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.7" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
+          <span class="chan-t"><b data-i="con.mail">E-Mail</b><span id="mail-addr">hello@peivando.com</span></span>
+        </a>
+        <a class="chan" href="https://m.me/peivando" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--teal)" aria-hidden="true"><path d="M12 2C6.3 2 2 6.2 2 11.7c0 3.1 1.4 5.9 3.7 7.7v3.8l3.4-1.9c.9.3 1.9.4 2.9.4 5.7 0 10-4.2 10-9.7S17.7 2 12 2Zm1 13.1-2.6-2.7-5 2.7 5.5-5.8 2.6 2.7 4.9-2.7-5.4 5.8Z"/></svg>
+          <span class="chan-t"><b>Messenger</b><span>m.me/peivando</span></span>
+        </a>
+      </div>
+    </div>
+
+    <form id="contact-form" novalidate>
+      <div class="field"><label for="f-name" data-i="f.name">Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="f-mail" data-i="f.mail">E-Mail oder Telefon</label>
+        <input id="f-mail" name="contact" type="text" autocomplete="email" required></div>
+      <div class="field"><label for="f-kind" data-i="f.kind">Worum geht es?</label>
+        <select id="f-kind" name="kind">
+          <option data-i="f.k1">Neue Website</option>
+          <option data-i="f.k2">Mehrsprachige Website</option>
+          <option data-i="f.k3">Landing Page</option>
+          <option data-i="f.k4">Redesign oder Pflege</option>
+          <option data-i="f.k5">Etwas anderes</option>
+        </select></div>
+      <div class="field"><label for="f-msg" data-i="f.msg">Ihr Unternehmen, in ein paar Sätzen</label>
+        <textarea id="f-msg" name="message" required></textarea></div>
+      <button class="btn btn-fill" type="submit" style="justify-content:center"><span data-i="f.send">Anfrage senden</span></button>
+      <p class="msg" id="form-msg" role="status"></p>
+      <p class="note" data-i="f.privacy">Ihre Angaben werden nur zur Beantwortung Ihrer Anfrage verwendet.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p class="mono">© <span id="yr">2026</span> Peivando · München · <a href="https://peivando.com" style="color:var(--ink-2)">peivando.com</a></p>
+    <div class="links">
+      <a class="mono" href="https://www.facebook.com/peivando" target="_blank" rel="noopener">Facebook</a>
+      <a class="mono todo" href="#" data-i="foot.imp">Impressum ergänzen</a>
+      <a class="mono todo" href="#" data-i="foot.dse">Datenschutz ergänzen</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ─── EDIT THESE THREE LINES ─────────────────────────────── */
+var WHATSAPP = "93747970495";
+var EMAIL    = "info@peivando.com";
+var FORM_URL = "";
+/* ────────────────────────────────────────────────────────── */
+
+var T = { de:{},
+en:{
+ "nav.services":"Services","nav.process":"Process","nav.languages":"Languages","nav.contact":"Contact",
+ "hero.eyebrow":"Web design & development · Munich",
+ "hero.title":"Websites that work in <em>every language</em>.",
+ "hero.lede":"Modern, fast websites for small businesses — in German, English, Dari and Farsi. From the first page to ongoing care.",
+ "hero.cta1":"Message us on WhatsApp","hero.cta2":"See what we do",
+ "hero.m1":"Projects from US$100","hero.m2":"First conversation free","hero.m3":"Reply within 24 hours",
+ "band.label":"We work in",
+ "svc.eyebrow":"Services","svc.title":"Four things we do well.",
+ "svc.1.t":"Build a website","svc.1.d":"A modern, mobile-friendly business website — design, build, text layout and handover. You get the files, not just a login.","svc.1.p":"from US$100",
+ "svc.2.t":"Multilingual websites","svc.2.d":"German, English, Dari and Farsi on one site — with correct right-to-left typesetting, the right fonts, and a language switch that actually works.","svc.2.p":"on request",
+ "svc.3.t":"Landing pages","svc.3.d":"One page with one job: turning visitors into conversations. Clear message, one call to action, nothing competing for attention.","svc.3.p":"on request",
+ "svc.4.t":"Redesign & maintenance","svc.4.d":"Refresh an existing site, update content, fix what's broken. One-off or ongoing — your choice.","svc.4.p":"one-off or monthly",
+ "proc.eyebrow":"Process","proc.title":"From first call to live.",
+ "proc.lede":"Four steps, in this order. You always know what we're working on.",
+ "proc.1.t":"Talk","proc.1.d":"What your business does, who should find you, what's missing today. Free, no obligation.",
+ "proc.2.t":"Design","proc.2.d":"Structure and design for the front page. You see how it will look before anything gets built.",
+ "proc.3.t":"Build","proc.3.d":"We build it, test on phone, tablet and desktop, and set up domain, hosting and email.",
+ "proc.4.t":"Launch & care","proc.4.d":"The site goes live. After that: changes, updates and support — ongoing if you want it.",
+ "lng.eyebrow":"Why Peivando","lng.title":"Multilingual isn't an add-on. It's the reason.",
+ "lng.lede":"Most agencies translate the text and call it multilingual. A site in Dari or Farsi runs right to left — layout, numbers, forms, navigation. We build that properly, because we work in these languages ourselves.",
+ "lng.hint":"↑ The same client page. Switch language at the top right.",
+ "lng.1.t":"Real RTL layout","lng.1.d":"Not mirrored graphics — proper reading direction in navigation, forms and tables.",
+ "lng.2.t":"Fonts that fit","lng.2.d":"Persian script needs its own spacing and line height. Default fonts make it hard to read.",
+ "lng.3.t":"Advice in your language","lng.3.d":"Explain your business in German, English, Dari or Farsi — not whichever language is left over.",
+ "dm.brand":"Nowzad Bakery","dm.n1":"Range","dm.n2":"Shops","dm.n3":"Contact",
+ "dm.h":"Fresh bread, every morning at six.",
+ "dm.p":"Two shops in Munich. Orders for celebrations taken until Thursday.",
+ "dm.btn":"Order now","dm.t1":"Opening hours","dm.t2":"Directions","dm.t3":"Orders",
+ "con.eyebrow":"Contact","con.title":"Tell us what you have in mind.",
+ "con.lede":"A few sentences about your business is enough. We reply within 24 hours — in German, English, Dari or Farsi.",
+ "con.mail":"Email",
+ "f.name":"Name","f.mail":"Email or phone","f.kind":"What is it about?","f.msg":"Your business, in a few sentences",
+ "f.k1":"New website","f.k2":"Multilingual website","f.k3":"Landing page","f.k4":"Redesign or maintenance","f.k5":"Something else",
+ "f.send":"Send enquiry","f.privacy":"Your details are used only to answer your enquiry.",
+ "foot.imp":"Add legal notice","foot.dse":"Add privacy policy"
+},
+fa:{
+ "nav.services":"خدمات","nav.process":"روند کار","nav.languages":"زبان‌ها","nav.contact":"تماس",
+ "hero.eyebrow":"طراحی و توسعهٔ وب‌سایت · مونیخ",
+ "hero.title":"وب‌سایت‌هایی که به <em>هر زبان</em> کار می‌کنند.",
+ "hero.lede":"وب‌سایت‌های مدرن و سریع برای کسب‌وکارهای کوچک — به آلمانی، انگلیسی، دری و فارسی. از نخستین صفحه تا نگهداری همیشگی.",
+ "hero.cta1":"در واتس‌اپ پیام بفرستید","hero.cta2":"دیدن خدمات",
+ "hero.m1":"پروژه‌ها از ۱۰۰ دالر","hero.m2":"نخستین گفت‌وگو رایگان","hero.m3":"پاسخ در ۲۴ ساعت",
+ "band.label":"ما کار می‌کنیم به",
+ "svc.eyebrow":"خدمات","svc.title":"چهار کاری که خوب انجام می‌دهیم.",
+ "svc.1.t":"ساخت وب‌سایت","svc.1.d":"یک وب‌سایت تجارتی مدرن و سازگار با موبایل — طراحی، ساخت، چیدمان متن و تحویل. فایل‌ها را می‌گیرید، نه فقط یک حساب کاربری.","svc.1.p":"از ۱۰۰ دالر",
+ "svc.2.t":"وب‌سایت چندزبانه","svc.2.d":"آلمانی، انگلیسی، دری و فارسی در یک سایت — با حروف‌چینی درست راست‌به‌چپ، فونت‌های مناسب و تعویض زبانی که واقعاً کار می‌کند.","svc.2.p":"بر اساس توافق",
+ "svc.3.t":"لندینگ‌پیج","svc.3.d":"یک صفحه با یک وظیفه: تبدیل بازدیدکننده به گفت‌وگو. پیام روشن، یک دعوت به اقدام، بدون حواس‌پرتی.","svc.3.p":"بر اساس توافق",
+ "svc.4.t":"بازطراحی و نگهداری","svc.4.d":"تازه‌سازی سایت موجود، به‌روزرسانی محتوا و رفع مشکلات. یک‌باره یا دوامدار — انتخاب با شماست.","svc.4.p":"یک‌باره یا ماهانه",
+ "proc.eyebrow":"روند کار","proc.title":"از نخستین گفت‌وگو تا راه‌اندازی.",
+ "proc.lede":"چهار گام، به همین ترتیب. شما همیشه می‌دانید روی چه چیزی کار می‌کنیم.",
+ "proc.1.t":"گفت‌وگو","proc.1.d":"کسب‌وکار شما چه می‌کند، چه کسی باید شما را بیابد، امروز چه کم است. رایگان و بدون تعهد.",
+ "proc.2.t":"طراحی","proc.2.d":"ساختار و طرح صفحهٔ نخست. پیش از ساخت می‌بینید که چگونه خواهد بود.",
+ "proc.3.t":"ساخت","proc.3.d":"می‌سازیم، روی موبایل، تبلت و دسکتاپ آزمایش می‌کنیم و دامنه، هاستینگ و ایمیل را تنظیم می‌کنیم.",
+ "proc.4.t":"راه‌اندازی و نگهداری","proc.4.d":"سایت آنلاین می‌شود. پس از آن: تغییرات، به‌روزرسانی و پشتیبانی — در صورت نیاز دوامدار.",
+ "lng.eyebrow":"چرا پیوندو","lng.title":"چندزبانگی افزوده نیست. دلیل ماست.",
+ "lng.lede":"بیشتر شرکت‌ها متن را ترجمه می‌کنند و نامش را چندزبانه می‌گذارند. سایتی به دری یا فارسی از راست به چپ می‌رود — چیدمان، اعداد، فرم‌ها و ناوبری. ما این را درست می‌سازیم، چون خودمان به این زبان‌ها کار می‌کنیم.",
+ "lng.hint":"↑ همان صفحهٔ مشتری. زبان را از بالا عوض کنید.",
+ "lng.1.t":"چیدمان واقعی راست‌به‌چپ","lng.1.d":"نه گرافیک آینه‌شده، بلکه جهت خواندن درست در ناوبری، فرم‌ها و جدول‌ها.",
+ "lng.2.t":"فونت‌های مناسب","lng.2.d":"خط فارسی به فاصله و ارتفاع سطر خودش نیاز دارد. فونت‌های پیش‌فرض آن را ناخوانا می‌کنند.",
+ "lng.3.t":"مشوره به زبان شما","lng.3.d":"کسب‌وکارتان را به آلمانی، انگلیسی، دری یا فارسی توضیح دهید — نه به زبانی که باقی مانده است.",
+ "dm.brand":"نانوایی نوزاد","dm.n1":"محصولات","dm.n2":"شعبه‌ها","dm.n3":"تماس",
+ "dm.h":"نان تازه، هر صبح ساعت شش.",
+ "dm.p":"دو شعبه در مونیخ. سفارش برای مراسم تا روز پنجشنبه پذیرفته می‌شود.",
+ "dm.btn":"همین حالا سفارش دهید","dm.t1":"ساعات کاری","dm.t2":"مسیر","dm.t3":"سفارش",
+ "con.eyebrow":"تماس","con.title":"بگویید چه در سر دارید.",
+ "con.lede":"چند جمله دربارهٔ کسب‌وکارتان کافی است. ظرف ۲۴ ساعت پاسخ می‌دهیم — به آلمانی، انگلیسی، دری یا فارسی.",
+ "con.mail":"ایمیل",
+ "f.name":"نام","f.mail":"ایمیل یا تلفن","f.kind":"موضوع چیست؟","f.msg":"کسب‌وکار شما، در چند جمله",
+ "f.k1":"وب‌سایت جدید","f.k2":"وب‌سایت چندزبانه","f.k3":"لندینگ‌پیج","f.k4":"بازطراحی یا نگهداری","f.k5":"چیز دیگری",
+ "f.send":"ارسال درخواست","f.privacy":"اطلاعات شما تنها برای پاسخ به درخواست‌تان استفاده می‌شود.",
+ "foot.imp":"افزودن Impressum","foot.dse":"افزودن سیاست حریم خصوصی"
+}};
+
+var MSG={
+ de:{sent:"Danke — Ihre Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden.",miss:"Bitte füllen Sie Name, Kontakt und Nachricht aus.",off:"Das Formular ist noch nicht verbunden. Schreiben Sie uns solange direkt per WhatsApp oder E-Mail.",err:"Das hat nicht geklappt. Bitte schreiben Sie uns direkt per WhatsApp oder E-Mail."},
+ en:{sent:"Thank you — your enquiry has arrived. We'll reply within 24 hours.",miss:"Please fill in name, contact and message.",off:"The form isn't connected yet. Please write to us on WhatsApp or by email in the meantime.",err:"That didn't go through. Please write to us on WhatsApp or by email."},
+ fa:{sent:"سپاس — درخواست شما رسید. ظرف ۲۴ ساعت پاسخ می‌دهیم.",miss:"لطفاً نام، راه تماس و پیام را پر کنید.",off:"فرم هنوز وصل نشده است. در این میان لطفاً در واتس‌اپ یا ایمیل بنویسید.",err:"ارسال نشد. لطفاً در واتس‌اپ یا ایمیل بنویسید."}};
+
+var WA_TEXT={de:"Hallo Peivando, ich interessiere mich für eine Website.",en:"Hello Peivando, I'm interested in a website.",fa:"سلام پیوندو، من به یک وب‌سایت علاقه‌مند هستم."};
+
+(function(){document.querySelectorAll("[data-i]").forEach(function(el){T.de[el.getAttribute("data-i")]=el.innerHTML;});})();
+
+var lang="de", screen=document.getElementById("screen");
+
+function apply(l,animate){
+  lang=l;
+  var dict=T[l]||T.de;
+  var go=function(){
+    document.querySelectorAll("[data-i]").forEach(function(el){
+      var k=el.getAttribute("data-i");
+      if(dict[k]!=null) el.innerHTML=dict[k];
+    });
+    document.body.setAttribute("dir", l==="fa"?"rtl":"ltr");
+    document.documentElement.lang = l==="fa"?"fa":l;
+    document.querySelectorAll(".langs button").forEach(function(b){
+      b.setAttribute("aria-pressed",String(b.dataset.l===l));
+    });
+    var wa="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(WA_TEXT[l]||WA_TEXT.de);
+    document.getElementById("cta-wa").href=wa;
+    document.getElementById("ch-wa").href=wa;
+  };
+  if(animate && screen && !matchMedia("(prefers-reduced-motion: reduce)").matches){
+    screen.classList.add("flip");
+    setTimeout(function(){ go(); screen.classList.remove("flip"); },170);
+  } else { go(); }
+  try{localStorage.setItem("peivando.lang",l);}catch(e){}
+}
+
+document.querySelectorAll(".langs button").forEach(function(b){
+  b.addEventListener("click",function(){ apply(b.dataset.l,true); });
+});
+
+document.getElementById("mail-addr").textContent=EMAIL;
+document.getElementById("ch-mail").href="mailto:"+EMAIL+"?subject="+encodeURIComponent("Website-Anfrage / Website enquiry");
+document.getElementById("wa-num").textContent="+"+WHATSAPP.replace(/^(\d{1,3})(\d{2})(\d{3})(\d+)$/,"$1 $2 $3 $4");
+document.getElementById("yr").textContent=new Date().getFullYear();
+
+/* sticky header state */
+var head=document.getElementById("head");
+addEventListener("scroll",function(){ head.classList.toggle("stuck", scrollY>24); },{passive:true});
+
+/* form */
+var form=document.getElementById("contact-form"), out=document.getElementById("form-msg");
+function say(k,t){ out.className="msg show "+k; out.textContent=t; }
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  var m=MSG[lang]||MSG.de, fd=new FormData(form);
+  if(!String(fd.get("name")||"").trim()||!String(fd.get("contact")||"").trim()||!String(fd.get("message")||"").trim()){ say("warn",m.miss); return; }
+  if(!FORM_URL){ say("warn",m.off); return; }
+  fd.append("_language",lang);
+  fetch(FORM_URL,{method:"POST",body:fd,headers:{Accept:"application/json"}})
+    .then(function(r){ if(r.ok){form.reset(); say("ok",m.sent);} else say("warn",m.err); })
+    .catch(function(){ say("warn",m.err); });
+});
+
+/* ─── hero network ─────────────────────────────────────── */
+(function(){
+  var cv=document.getElementById("net"), ctx=cv.getContext("2d");
+  var host=cv.parentElement, dpr=Math.min(devicePixelRatio||1,2);
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var W=0,H=0,pts=[],mouse={x:-9e9,y:-9e9};
+  var LINK=170, TEAL="58,207,182";
+
+  function seedRand(s){ return function(){ s=(s*1664525+1013904223)>>>0; return s/4294967296; }; }
+
+  function build(){
+    var r=host.getBoundingClientRect();
+    W=r.width; H=r.height;
+    cv.width=W*dpr; cv.height=H*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    var density=Math.round((W*H)/26000);
+    var n=Math.max(26,Math.min(92,density));
+    var rnd=seedRand(20260916);
+    pts=[];
+    for(var i=0;i<n;i++){
+      pts.push({
+        x:rnd()*W, y:rnd()*H,
+        vx:(rnd()-.5)*.14, vy:(rnd()-.5)*.14,
+        r:rnd()<.16?2.4:1.4,
+        hot:rnd()<.16
+      });
+    }
+  }
+
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];
+      if(!reduce){
+        p.x+=p.vx; p.y+=p.vy;
+        if(p.x<-20)p.x=W+20; if(p.x>W+20)p.x=-20;
+        if(p.y<-20)p.y=H+20; if(p.y>H+20)p.y=-20;
+      }
+      var dxm=p.x-mouse.x, dym=p.y-mouse.y, dm=Math.hypot(dxm,dym);
+      p.lit = dm<210 ? 1-(dm/210) : 0;
+    }
+    for(var a=0;a<pts.length;a++){
+      for(var b=a+1;b<pts.length;b++){
+        var dx=pts[a].x-pts[b].x, dy=pts[a].y-pts[b].y, d=Math.hypot(dx,dy);
+        if(d<LINK){
+          var base=(1-d/LINK)*0.16;
+          var boost=Math.max(pts[a].lit,pts[b].lit)*0.34;
+          ctx.strokeStyle="rgba("+TEAL+","+(base+boost).toFixed(3)+")";
+          ctx.lineWidth=1;
+          ctx.beginPath(); ctx.moveTo(pts[a].x,pts[a].y); ctx.lineTo(pts[b].x,pts[b].y); ctx.stroke();
+        }
+      }
+    }
+    for(var k=0;k<pts.length;k++){
+      var q=pts[k];
+      var al=(q.hot?0.75:0.4)+q.lit*0.45;
+      ctx.fillStyle="rgba("+TEAL+","+Math.min(al,1).toFixed(3)+")";
+      ctx.beginPath(); ctx.arc(q.x,q.y,q.r+q.lit*1.6,0,6.2832); ctx.fill();
+    }
+    if(!reduce) raf=requestAnimationFrame(frame);
+  }
+
+  var raf;
+  function start(){ build(); cancelAnimationFrame(raf); frame(); }
+  start();
+
+  addEventListener("resize",function(){ clearTimeout(window.__nt); window.__nt=setTimeout(start,180); });
+  host.addEventListener("pointermove",function(e){
+    var r=host.getBoundingClientRect();
+    mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;
+    if(reduce) frame();
+  });
+  host.addEventListener("pointerleave",function(){ mouse.x=-9e9; mouse.y=-9e9; if(reduce) frame(); });
+})();
+
+try{ var s=localStorage.getItem("peivando.lang"); apply(s&&T[s]?s:"de",false); }catch(e){ apply("de",false); }
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 export const PRICING_CONTACT = {
   whatsapp: "93747970495",
   email: "info@peivando.com",
-  contactHref: "/#contact",
+  contactHref: "/#kontakt",
 };
 
 export const PACKAGES = [

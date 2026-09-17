@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Peivando baut moderne, schnelle Websites für kleine Unternehmen in München — auf Deutsch, Englisch, Dari und Farsi. Projekte ab 100 US$.">
+<meta name="description" content="Mehrsprachiges Webdesign für kleine und internationale Unternehmen in München — Deutsch, Englisch, Dari und Farsi. Pakete ab €399.">
 <meta name="theme-color" content="#050C12">
 <link rel="canonical" href="https://peivando.com/">
 <meta property="og:type" content="website">
@@ -32,7 +32,7 @@
   "url":"https://peivando.com/",
   "email":"info@peivando.com",
   "image":"https://peivando.com/og-image.png",
-  "priceRange":"ab 100 USD",
+  "priceRange":"EUR 399",
   "areaServed":{"@type":"City","name":"München"},
   "address":{"@type":"PostalAddress","addressLocality":"München","addressCountry":"DE"},
   "knowsLanguage":["de","en","fa","prs"],
@@ -63,19 +63,23 @@
   --fa:'Vazirmatn','Noto Naskh Arabic',Tahoma,sans-serif;
   --maxw:78rem;
   --gut:22px;
+  --head-h:72px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+}
 body{
   margin:0;background:var(--void);color:var(--ink);
   font-family:var(--ui);font-size:1.0625rem;line-height:1.6;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;
 }
 img{max-width:100%}
 a{color:inherit}
 ::selection{background:var(--teal);color:var(--void)}
 :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:3px}
-@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 
 body[dir="rtl"]{font-family:var(--fa);line-height:1.95}
 body[dir="rtl"] h1,body[dir="rtl"] h2,body[dir="rtl"] h3,body[dir="rtl"] .num{font-family:var(--fa);letter-spacing:0}
@@ -224,6 +228,7 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
 .msg.warn{background:var(--panel-2);color:var(--ink-2);border:1px solid var(--line)}
 </style>
 <link rel="stylesheet" href="components/chrome/chrome.css">
+<link rel="stylesheet" href="components/home/onepage.css">
 </head>
 <body>
 <a class="skip-link" href="#top" data-i="skip">Zum Inhalt</a>
@@ -243,12 +248,12 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
       </svg>
       <b>Peivando</b>
     </a>
-    <nav class="nav" id="site-nav">
-      <a href="/leistungen" data-i="nav.services">Leistungen</a>
-      <a href="/projekte" data-i="nav.projects">Projekte</a>
-      <a href="/preise" data-i="nav.pricing">Preise</a>
-      <a href="/ueber" data-i="nav.about">Über uns</a>
-      <a href="/kontakt" data-i="nav.contact">Kontakt</a>
+    <nav class="nav" id="site-nav" aria-label="Seite">
+      <a href="/#leistungen" data-section="leistungen" data-i="nav.services">Leistungen</a>
+      <a href="/#projekte" data-section="projekte" data-i="nav.projects">Projekte</a>
+      <a href="/#preise" data-section="preise" data-i="nav.pricing">Preise</a>
+      <a href="/#ueber" data-section="ueber" data-i="nav.about">Über uns</a>
+      <a href="/#kontakt" data-section="kontakt" data-i="nav.contact">Kontakt</a>
     </nav>
     <div class="head-tools">
       <div class="langs" role="group" aria-label="Sprache">
@@ -266,23 +271,32 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
 
 <main id="top">
 
-<div class="hero">
+<div class="hero spa-section" id="hero">
   <canvas id="net" aria-hidden="true"></canvas>
   <div class="wrap hero-in">
     <p class="mono" data-i="hero.eyebrow">Webdesign &amp; Entwicklung · München</p>
-    <h1 data-i="hero.title" data-html>Websites, die in <em>jeder Sprache</em> funktionieren.</h1>
-    <p class="lede" data-i="hero.lede">Moderne, schnelle Websites für kleine Unternehmen — auf Deutsch, Englisch, Dari und Farsi. Von der ersten Seite bis zur laufenden Pflege.</p>
+    <h1>
+      <span class="hero-kicker" data-i="hero.title">Mehrsprachiges Webdesign für Unternehmen in München</span>
+      <span class="hero-brand" data-i="hero.brandLine">Websites, die in <em>jeder Sprache</em> funktionieren.</span>
+    </h1>
+    <p class="lede" data-i="hero.lede">Mehr Kunden, mehr Anfragen, ein seriöser Auftritt — und gefunden bei Google. Moderne Websites für kleine und internationale Unternehmen, auf Deutsch, Englisch, Dari und Farsi.</p>
     <div class="cta">
-      <a class="btn btn-fill" id="cta-wa" href="#contact">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7 1-.1.1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3c-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1Z"/></svg>
-        <span data-i="hero.cta1">Per WhatsApp schreiben</span>
+      <a class="btn btn-fill" href="#kontakt">
+        <span data-i="hero.cta1">Kostenloses Erstgespräch</span>
       </a>
-      <a class="btn btn-line" href="#services"><span data-i="hero.cta2">Leistungen ansehen</span></a>
+      <a class="btn btn-line" href="#projekte"><span data-i="hero.cta2">Unsere Projekte ansehen</span></a>
     </div>
     <div class="meta">
-      <span class="mono" data-i="hero.m1">Projekte ab 100 US$</span>
+      <span class="mono" data-i="hero.m1">Pakete ab €399</span>
       <span class="mono" data-i="hero.m2">Erstgespräch kostenlos</span>
       <span class="mono" data-i="hero.m3">Antwort in 24 Stunden</span>
+    </div>
+    <div class="trust-ticks">
+      <span data-i="trust.mobile">Mobile</span>
+      <span data-i="trust.multilingual">Mehrsprachig</span>
+      <span data-i="trust.seo">SEO vorbereitet</span>
+      <span data-i="trust.whatsapp">WhatsApp &amp; Formular</span>
+      <span data-i="trust.care">persönliche Betreuung</span>
     </div>
   </div>
 </div>
@@ -297,7 +311,16 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
   </div>
 </div>
 
-<section id="services" class="wrap">
+<section id="projekte" class="wrap spa-section">
+  <div class="sec-head">
+    <p class="mono" data-i="projects.eyebrow">Projekte</p>
+    <h2 data-i="projects.title">Ausgewählte Arbeiten</h2>
+    <p class="lede" data-i="projects.lede">Konzeptprojekte zeigen, wie eine Seite in mehreren Sprachen aussehen kann. Keine erfundenen Kundenstimmen.</p>
+  </div>
+  <div class="proj-grid" id="proj-grid"></div>
+</section>
+
+<section id="leistungen" class="wrap spa-section">
   <div class="sec-head">
     <p class="mono" data-i="svc.eyebrow">Leistungen</p>
     <h2 data-i="svc.title">Vier Dinge, die wir gut machen.</h2>
@@ -306,13 +329,13 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
     <span class="num">01</span>
     <div class="svc-b"><h3 data-i="svc.1.t">Website erstellen</h3>
       <p data-i="svc.1.d">Eine moderne, mobilfreundliche Firmenwebsite — Entwurf, Aufbau, Text-Layout und Übergabe. Sie bekommen die Dateien, nicht nur einen Login.</p></div>
-    <span class="price" data-i="svc.1.p">ab 100 US$</span>
+    <span class="price" data-i="svc.1.p">ab €399</span>
   </article>
   <article class="svc">
     <span class="num">02</span>
     <div class="svc-b"><h3 data-i="svc.2.t">Mehrsprachige Websites</h3>
       <p data-i="svc.2.d">Deutsch, Englisch, Dari und Farsi auf einer Seite — mit korrektem Rechts-nach-links-Satz, passenden Schriften und einer Sprachumschaltung, die funktioniert.</p></div>
-    <span class="price" data-i="svc.2.p">auf Anfrage</span>
+    <span class="price" data-i="svc.2.p">ab €1.290</span>
   </article>
   <article class="svc">
     <span class="num">03</span>
@@ -326,23 +349,17 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
       <p data-i="svc.4.d">Bestehende Website auffrischen, Inhalte aktualisieren, Fehler beheben. Einmalig oder laufend — Sie entscheiden.</p></div>
     <span class="price" data-i="svc.4.p">einmalig o. monatlich</span>
   </article>
+  <p class="industry-links" aria-label="Branchen">
+    <a href="/branchen/restaurants/" data-i="industries.restaurant">Gastronomie</a>
+    <a href="/branchen/handwerker/" data-i="industries.craft">Handwerk</a>
+    <a href="/branchen/aerzte/" data-i="industries.doctors">Ärzte</a>
+    <a href="/branchen/autohaendler/" data-i="industries.carDealers">Autohändler</a>
+    <a href="/branchen/friseure/" data-i="industries.salons">Friseure</a>
+    <a href="/branchen/lokale-unternehmen/" data-i="industries.local">Lokal</a>
+  </p>
 </section>
 
-<section id="process" class="wrap">
-  <div class="sec-head">
-    <p class="mono" data-i="proc.eyebrow">Ablauf</p>
-    <h2 data-i="proc.title">Vom ersten Gespräch bis online.</h2>
-    <p class="lede" data-i="proc.lede">Vier Schritte, in dieser Reihenfolge. Sie wissen jederzeit, woran wir gerade arbeiten.</p>
-  </div>
-  <div class="steps">
-    <div class="step"><span class="mono">01</span><h3 data-i="proc.1.t">Gespräch</h3><p data-i="proc.1.d">Was macht Ihr Unternehmen, wer soll Sie finden, was fehlt heute. Kostenlos, ohne Verpflichtung.</p></div>
-    <div class="step"><span class="mono">02</span><h3 data-i="proc.2.t">Entwurf</h3><p data-i="proc.2.d">Struktur und Design für die Startseite. Sie sehen, wie es aussehen wird, bevor gebaut wird.</p></div>
-    <div class="step"><span class="mono">03</span><h3 data-i="proc.3.t">Umsetzung</h3><p data-i="proc.3.d">Wir bauen, testen auf Handy, Tablet und Desktop und richten Domain, Hosting und E-Mail ein.</p></div>
-    <div class="step"><span class="mono">04</span><h3 data-i="proc.4.t">Launch &amp; Pflege</h3><p data-i="proc.4.d">Die Seite geht live. Danach: Änderungen, Aktualisierungen und Support — auf Wunsch dauerhaft.</p></div>
-  </div>
-</section>
-
-<section id="languages" class="wrap">
+<section id="sprachen" class="wrap spa-section">
   <div class="split">
     <div>
       <p class="mono" data-i="lng.eyebrow">Warum Peivando</p>
@@ -381,12 +398,75 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
   </div>
 </section>
 
-<section id="contact" class="contact">
+<section id="preise" class="spa-section">
+  <peivando-pricing heading="h2"></peivando-pricing>
+</section>
+
+<section id="ablauf" class="wrap spa-section">
+  <div class="sec-head">
+    <p class="mono" data-i="proc.eyebrow">Ablauf</p>
+    <h2 data-i="proc.title">Vom ersten Gespräch bis online.</h2>
+    <p class="lede" data-i="proc.lede">Vier Schritte, in dieser Reihenfolge. Sie wissen jederzeit, woran wir gerade arbeiten.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><span class="mono">01</span><h3 data-i="proc.1.t">Gespräch</h3><p data-i="proc.1.d">Was macht Ihr Unternehmen, wer soll Sie finden, was fehlt heute. Kostenlos, ohne Verpflichtung.</p></div>
+    <div class="step"><span class="mono">02</span><h3 data-i="proc.2.t">Entwurf</h3><p data-i="proc.2.d">Struktur und Design für die Startseite. Sie sehen, wie es aussehen wird, bevor gebaut wird.</p></div>
+    <div class="step"><span class="mono">03</span><h3 data-i="proc.3.t">Umsetzung</h3><p data-i="proc.3.d">Wir bauen, testen auf Handy, Tablet und Desktop und richten Domain, Hosting und E-Mail ein.</p></div>
+    <div class="step"><span class="mono">04</span><h3 data-i="proc.4.t">Launch &amp; Pflege</h3><p data-i="proc.4.d">Die Seite geht live. Danach: Änderungen, Aktualisierungen und Support — auf Wunsch dauerhaft.</p></div>
+  </div>
+</section>
+
+<section id="faq" class="wrap spa-section">
+  <div class="sec-head">
+    <p class="mono" data-i="faq.eyebrow">FAQ</p>
+    <h2 data-i="faq.title">Häufige Fragen</h2>
+  </div>
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary data-i="faq.1.q">Was kosten die Pakete?</summary>
+      <p class="faq-a" data-i="faq.1.a">Starter ab €399 (One Page), Business ab €899 (bis 5 Seiten), Multilingual ab €1.290 (Deutsch plus eine weitere Sprache, inklusive RTL). Im kostenlosen Erstgespräch klären wir den tatsächlichen Umfang.</p>
+    </details>
+    <details class="faq-item">
+      <summary data-i="faq.2.q">Welche Sprachen können auf die Website?</summary>
+      <p class="faq-a" data-i="faq.2.a">Deutsch, Englisch, Dari und Farsi — inklusive Rechts-nach-links. Weitere Sprachen auf Anfrage.</p>
+    </details>
+    <details class="faq-item">
+      <summary data-i="faq.3.q">Wie lange dauert es bis zum Launch?</summary>
+      <p class="faq-a" data-i="faq.3.a">Eine One-Page oft in wenigen Wochen, sobald Texte und Bilder stehen. Mehrseitige und mehrsprachige Sites brauchen länger. Den Zeitplan nennen wir vor dem Start.</p>
+    </details>
+    <details class="faq-item">
+      <summary data-i="faq.4.q">Ich habe noch keine Texte und Fotos.</summary>
+      <p class="faq-a" data-i="faq.4.a">Kein Problem. Wir legen die Struktur mit Ihnen fest und sagen klar, was von Ihnen kommen muss. Platzhalter ersetzen wir, sobald Material da ist.</p>
+    </details>
+    <details class="faq-item">
+      <summary data-i="faq.5.q">Sind die Projekte echte Kundenwebsites?</summary>
+      <p class="faq-a" data-i="faq.5.a">Arbeiten mit dem Hinweis „Konzeptprojekt“ sind Entwürfe, keine Live-Referenzen. Echte Stimmen veröffentlichen wir nur, wenn sie vorliegen.</p>
+    </details>
+    <details class="faq-item">
+      <summary data-i="faq.6.q">Für wen ist Peivando gedacht?</summary>
+      <p class="faq-a" data-i="faq.6.a">Für kleine und internationale Unternehmen in Deutschland — besonders dann, wenn Ihre Kunden Deutsch, Englisch, Dari oder Farsi sprechen.</p>
+    </details>
+  </div>
+</section>
+
+<section id="ueber" class="wrap spa-section">
+  <div class="sec-head">
+    <p class="mono" data-i="about.eyebrow">Über uns</p>
+    <h2 data-i="about.title">Über Peivando</h2>
+    <p class="lede" data-i="about.lede">Wir helfen kleinen und internationalen Unternehmen in Deutschland, online Kunden zu gewinnen.</p>
+  </div>
+  <div class="about-copy">
+    <p data-i="about.p1">Peivando baut Websites, die in Deutsch, Englisch, Dari und Farsi funktionieren — technisch sauber, mobil, mit Formular und WhatsApp, persönlich betreut.</p>
+    <p data-i="about.p2">Unser Fokus liegt auf Betrieben in und um München, deren Kundschaft mehr als eine Sprache spricht: Gastronomie, Handwerk, Praxen, Handel und lokale Dienstleistungen.</p>
+  </div>
+</section>
+
+<section id="kontakt" class="contact spa-section">
   <div class="wrap c-grid">
     <div>
       <p class="mono" data-i="con.eyebrow">Kontakt</p>
       <h2 style="margin-top:16px" data-i="con.title">Erzählen Sie uns, was Sie vorhaben.</h2>
-      <p class="lede" style="margin-top:18px" data-i="con.lede">Ein paar Sätze über Ihr Unternehmen genügen. Wir melden uns innerhalb von 24 Stunden — auf Deutsch, Englisch, Dari oder Farsi.</p>
+      <p class="lede" style="margin-top:18px" data-i="con.lede">Ein paar Angaben zu Bedarf, Umfang, Sprachen und Budget genügen. Wir melden uns innerhalb von 24 Stunden — auf Deutsch, Englisch, Dari oder Farsi.</p>
       <div class="chans">
         <a class="chan" id="ch-wa" href="#">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--teal)" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.7 1-.1.1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3c-.2.3-.9.9-.9 2.1s.9 2.5 1 2.6c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1Z"/></svg>
@@ -420,7 +500,7 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
         <textarea id="f-msg" name="message" required></textarea></div>
       <button class="btn btn-fill" type="submit" style="justify-content:center"><span data-i="f.send">Anfrage senden</span></button>
       <p class="msg" id="form-msg" role="status"></p>
-      <p class="note" data-i="f.privacy">Ihre Angaben werden nur zur Beantwortung Ihrer Anfrage verwendet.</p>
+      <p class="note"><span data-i="f.privacy">Ihre Angaben (Name und E-Mail oder Telefon) werden nur zur Beantwortung Ihrer Anfrage verwendet.</span> <a href="/datenschutz/" data-i="foot.dse">Datenschutz</a></p>
     </form>
   </div>
 </section>
@@ -437,9 +517,9 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
       </div>
     </div>
     <div class="links">
-      <a href="/kontakt" data-i="foot.contact">Kontakt</a>
-      <a href="/impressum" data-i="foot.imp">Impressum</a>
-      <a href="/datenschutz" data-i="foot.dse">Datenschutz</a>
+      <a href="/#kontakt" data-i="foot.contact">Kontakt</a>
+      <a href="/impressum/" data-i="foot.imp">Impressum</a>
+      <a href="/datenschutz/" data-i="foot.dse">Datenschutz</a>
       <a id="foot-facebook" href="https://www.facebook.com/peivando" target="_blank" rel="noopener" data-i="foot.facebook">Facebook</a>
     </div>
   </div>
@@ -452,16 +532,17 @@ var FORM_URL = "";
 
 var T = { de:{},
 en:{
- "nav.services":"Services","nav.process":"Process","nav.languages":"Languages","nav.contact":"Contact",
- "hero.eyebrow":"Web design & development · Munich",
- "hero.title":"Websites that work in <em>every language</em>.",
- "hero.lede":"Modern, fast websites for small businesses — in German, English, Dari and Farsi. From the first page to ongoing care.",
- "hero.cta1":"Message us on WhatsApp","hero.cta2":"See what we do",
- "hero.m1":"Projects from US$100","hero.m2":"First conversation free","hero.m3":"Reply within 24 hours",
+ "nav.services":"Services","nav.projects":"Projects","nav.pricing":"Pricing","nav.about":"About us","nav.contact":"Contact",
+ "hero.eyebrow":"Web design &amp; development · Munich",
+ "hero.title":"Multilingual web design for businesses in Munich",
+ "hero.brandLine":"Websites that work in <em>every language</em>.",
+ "hero.lede":"More customers, more enquiries, a professional presence — and found on Google. Modern websites for small and international businesses, in German, English, Dari and Farsi.",
+ "hero.cta1":"Free first conversation","hero.cta2":"See our projects",
+ "hero.m1":"Packages from €399","hero.m2":"First conversation free","hero.m3":"Reply within 24 hours",
  "band.label":"We work in",
  "svc.eyebrow":"Services","svc.title":"Four things we do well.",
- "svc.1.t":"Build a website","svc.1.d":"A modern, mobile-friendly business website — design, build, text layout and handover. You get the files, not just a login.","svc.1.p":"from US$100",
- "svc.2.t":"Multilingual websites","svc.2.d":"German, English, Dari and Farsi on one site — with correct right-to-left typesetting, the right fonts, and a language switch that actually works.","svc.2.p":"on request",
+ "svc.1.t":"Build a website","svc.1.d":"A modern, mobile-friendly business website — design, build, text layout and handover. You get the files, not just a login.","svc.1.p":"from €399",
+ "svc.2.t":"Multilingual websites","svc.2.d":"German, English, Dari and Farsi on one site — with correct right-to-left typesetting, the right fonts, and a language switch that actually works.","svc.2.p":"from €1,290",
  "svc.3.t":"Landing pages","svc.3.d":"One page with one job: turning visitors into conversations. Clear message, one call to action, nothing competing for attention.","svc.3.p":"on request",
  "svc.4.t":"Redesign & maintenance","svc.4.d":"Refresh an existing site, update content, fix what's broken. One-off or ongoing — your choice.","svc.4.p":"one-off or monthly",
  "proc.eyebrow":"Process","proc.title":"From first call to live.",
@@ -486,18 +567,18 @@ en:{
  "f.name":"Name","f.mail":"Email or phone","f.kind":"What is it about?","f.msg":"Your business, in a few sentences",
  "f.k1":"New website","f.k2":"Multilingual website","f.k3":"Landing page","f.k4":"Redesign or maintenance","f.k5":"Something else",
  "f.send":"Send enquiry","f.privacy":"Your details are used only to answer your enquiry.",
- "foot.imp":"Add legal notice","foot.dse":"Add privacy policy"
+ "foot.imp":"Impressum","foot.dse":"Privacy"
 },
 fa:{
  "nav.services":"خدمات","nav.process":"روند کار","nav.languages":"زبان‌ها","nav.contact":"تماس",
  "hero.eyebrow":"طراحی و توسعهٔ وب‌سایت · مونیخ",
  "hero.title":"وب‌سایت‌هایی که به <em>هر زبان</em> کار می‌کنند.",
  "hero.lede":"وب‌سایت‌های مدرن و سریع برای کسب‌وکارهای کوچک — به آلمانی، انگلیسی، دری و فارسی. از نخستین صفحه تا نگهداری همیشگی.",
- "hero.cta1":"در واتس‌اپ پیام بفرستید","hero.cta2":"دیدن خدمات",
- "hero.m1":"پروژه‌ها از ۱۰۰ دالر","hero.m2":"نخستین گفت‌وگو رایگان","hero.m3":"پاسخ در ۲۴ ساعت",
+ "hero.cta1":"گفت‌وگوی اول رایگان","hero.cta2":"پروژه‌های ما را ببینید",
+ "hero.m1":"بسته‌ها از ۳۹۹ €","hero.m2":"گفت‌وگوی اول رایگان","hero.m3":"پاسخ در ۲۴ ساعت",
  "band.label":"ما کار می‌کنیم به",
  "svc.eyebrow":"خدمات","svc.title":"چهار کاری که خوب انجام می‌دهیم.",
- "svc.1.t":"ساخت وب‌سایت","svc.1.d":"یک وب‌سایت تجارتی مدرن و سازگار با موبایل — طراحی، ساخت، چیدمان متن و تحویل. فایل‌ها را می‌گیرید، نه فقط یک حساب کاربری.","svc.1.p":"از ۱۰۰ دالر",
+ "svc.1.t":"ساخت وب‌سایت","svc.1.d":"یک وب‌سایت تجارتی مدرن و سازگار با موبایل — طراحی، ساخت، چیدمان متن و تحویل. فایل‌ها را می‌گیرید، نه فقط یک حساب کاربری.","svc.1.p":"از ۳۹۹ €",
  "svc.2.t":"وب‌سایت چندزبانه","svc.2.d":"آلمانی، انگلیسی، دری و فارسی در یک سایت — با حروف‌چینی درست راست‌به‌چپ، فونت‌های مناسب و تعویض زبانی که واقعاً کار می‌کند.","svc.2.p":"بر اساس توافق",
  "svc.3.t":"لندینگ‌پیج","svc.3.d":"یک صفحه با یک وظیفه: تبدیل بازدیدکننده به گفت‌وگو. پیام روشن، یک دعوت به اقدام، بدون حواس‌پرتی.","svc.3.p":"بر اساس توافق",
  "svc.4.t":"بازطراحی و نگهداری","svc.4.d":"تازه‌سازی سایت موجود، به‌روزرسانی محتوا و رفع مشکلات. یک‌باره یا دوامدار — انتخاب با شماست.","svc.4.p":"یک‌باره یا ماهانه",
@@ -523,23 +604,28 @@ fa:{
  "f.name":"نام","f.mail":"ایمیل یا تلفن","f.kind":"موضوع چیست؟","f.msg":"کسب‌وکار شما، در چند جمله",
  "f.k1":"وب‌سایت جدید","f.k2":"وب‌سایت چندزبانه","f.k3":"لندینگ‌پیج","f.k4":"بازطراحی یا نگهداری","f.k5":"چیز دیگری",
  "f.send":"ارسال درخواست","f.privacy":"اطلاعات شما تنها برای پاسخ به درخواست‌تان استفاده می‌شود.",
- "foot.imp":"افزودن Impressum","foot.dse":"افزودن سیاست حریم خصوصی"
+ "foot.imp":"Impressum","foot.dse":"Datenschutz"
 }};
 
 var MSG={
- de:{sent:"Danke — Ihre Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden.",miss:"Bitte füllen Sie Name, Kontakt und Nachricht aus.",off:"Das Formular ist noch nicht verbunden. Schreiben Sie uns solange direkt per WhatsApp oder E-Mail.",err:"Das hat nicht geklappt. Bitte schreiben Sie uns direkt per WhatsApp oder E-Mail."},
- en:{sent:"Thank you — your enquiry has arrived. We'll reply within 24 hours.",miss:"Please fill in name, contact and message.",off:"The form isn't connected yet. Please write to us on WhatsApp or by email in the meantime.",err:"That didn't go through. Please write to us on WhatsApp or by email."},
- fa:{sent:"سپاس — درخواست شما رسید. ظرف ۲۴ ساعت پاسخ می‌دهیم.",miss:"لطفاً نام، راه تماس و پیام را پر کنید.",off:"فرم هنوز وصل نشده است. در این میان لطفاً در واتس‌اپ یا ایمیل بنویسید.",err:"ارسال نشد. لطفاً در واتس‌اپ یا ایمیل بنویسید."}};
+ de:{sent:"Danke — Ihre Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden.",miss:"Bitte füllen Sie Name, Kontakt und Nachricht aus.",via:"WhatsApp öffnet sich mit Ihrer Anfrage. Senden Sie die Nachricht dort ab — oder nutzen Sie den E-Mail-Link.",err:"Das hat nicht geklappt. Bitte schreiben Sie uns direkt per WhatsApp oder E-Mail."},
+ en:{sent:"Thank you — your enquiry has arrived. We'll reply within 24 hours.",miss:"Please fill in name, contact and message.",via:"WhatsApp is opening with your enquiry. Send the message there — or use the email link.",err:"That didn't go through. Please write to us on WhatsApp or by email."},
+ fa:{sent:"سپاس — درخواست شما رسید. ظرف ۲۴ ساعت پاسخ می‌دهیم.",miss:"لطفاً نام، راه تماس و پیام را پر کنید.",via:"واتس‌اپ با درخواست شما باز می‌شود. پیام را آنجا بفرستید — یا از لینک ایمیل استفاده کنید.",err:"ارسال نشد. لطفاً در واتس‌اپ یا ایمیل بنویسید."},
+ prs:{sent:"سپاس — درخواست شما رسید. ظرف ۲۴ ساعت پاسخ می‌دهیم.",miss:"لطفاً نام، راه تماس و پیام را پر کنید.",via:"واتس‌اپ با درخواست‌تان باز می‌شود. پیام را آنجا بفرستید — یا از پیوند ایمیل استفاده کنید.",err:"ارسال نشد. لطفاً در واتس‌اپ یا ایمیل بنویسید."}};
 
-var WA_TEXT={de:"Hallo Peivando, ich interessiere mich für eine Website.",en:"Hello Peivando, I'm interested in a website.",fa:"سلام پیوندو، من به یک وب‌سایت علاقه‌مند هستم."};
+var WA_TEXT={de:"Hallo Peivando, ich interessiere mich für eine Website.",en:"Hello Peivando, I'm interested in a website.",fa:"سلام پیوندو، من به یک وب‌سایت علاقه‌مند هستم.",prs:"سلام پیوندو، من به یک وب‌سایت علاقه‌مند هستم."};
+var ENQUIRY_LABELS={
+ de:{name:"Name",contact:"Kontakt",kind:"Thema",msg:"Nachricht"},
+ en:{name:"Name",contact:"Contact",kind:"Topic",msg:"Message"},
+ fa:{name:"نام",contact:"تماس",kind:"موضوع",msg:"پیام"},
+ prs:{name:"نام",contact:"تماس",kind:"موضوع",msg:"پیام"}
+};
 
 (function(){document.querySelectorAll("[data-i]").forEach(function(el){T.de[el.getAttribute("data-i")]=el.innerHTML;});})();
 
 document.addEventListener("peivando:localechange",function(e){
   var l=(e.detail&&e.detail.locale)||window.lang||"de";
   var wa="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(WA_TEXT[l]||WA_TEXT.fa||WA_TEXT.de);
-  var cta=document.getElementById("cta-wa");
-  if(cta) cta.href=wa;
   var ch=document.getElementById("ch-wa");
   if(ch) ch.href=wa;
 });
@@ -551,12 +637,40 @@ document.getElementById("wa-num").textContent=PEIVANDO.whatsappDisplay;
 /* form */
 var form=document.getElementById("contact-form"), out=document.getElementById("form-msg");
 function say(k,t){ out.className="msg show "+k; out.textContent=t; }
+function enquiryMessage(fd, locale){
+  var labels=ENQUIRY_LABELS[locale]||ENQUIRY_LABELS.en;
+  var intro=WA_TEXT[locale]||WA_TEXT.de;
+  return [
+    intro,
+    "",
+    labels.name+": "+String(fd.get("name")||"").trim(),
+    labels.contact+": "+String(fd.get("contact")||"").trim(),
+    labels.kind+": "+String(fd.get("kind")||"").trim(),
+    "",
+    labels.msg+":",
+    String(fd.get("message")||"").trim()
+  ].join("\n");
+}
+function deliverEnquiry(text){
+  var wa=PEIVANDO.whatsAppUrl(text);
+  var mail=PEIVANDO.mailUrl("Website-Anfrage / Website enquiry", text);
+  var ch=document.getElementById("ch-wa");
+  if(ch) ch.href=wa;
+  var mailLink=document.getElementById("ch-mail");
+  if(mailLink) mailLink.href=mail;
+  PEIVANDO.openUrl(wa);
+}
 form.addEventListener("submit",function(e){
   e.preventDefault();
   var locale=window.lang||"de";
   var m=MSG[locale]||MSG.fa||MSG.de, fd=new FormData(form);
   if(!String(fd.get("name")||"").trim()||!String(fd.get("contact")||"").trim()||!String(fd.get("message")||"").trim()){ say("warn",m.miss); return; }
-  if(!FORM_URL){ say("warn",m.off); return; }
+  var text=enquiryMessage(fd, locale);
+  if(!FORM_URL){
+    deliverEnquiry(text);
+    say("ok", m.via);
+    return;
+  }
   fd.append("_language",locale);
   fetch(FORM_URL,{method:"POST",body:fd,headers:{Accept:"application/json"}})
     .then(function(r){ if(r.ok){form.reset(); say("ok",m.sent);} else say("warn",m.err); })
@@ -639,5 +753,7 @@ form.addEventListener("submit",function(e){
 })();
 </script>
 <script src="components/chrome/chrome.js"></script>
+<script type="module" src="components/pricing/pricing.js"></script>
+<script type="module" src="components/home/featured.js"></script>
 </body>
 </html>

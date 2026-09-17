@@ -63,15 +63,47 @@ function formatWhatsAppNumber(digits) {
   return "+" + digits;
 }
 
+function whatsAppUrl(text) {
+  return (
+    "https://wa.me/" +
+    CONTACT_CONFIG.whatsapp +
+    "?text=" +
+    encodeURIComponent(text || "")
+  );
+}
+
+function mailUrl(body) {
+  return (
+    "mailto:" +
+    CONTACT_CONFIG.email +
+    "?subject=" +
+    encodeURIComponent("Website-Anfrage / Website enquiry") +
+    "&body=" +
+    encodeURIComponent(body || "")
+  );
+}
+
+function openUrl(url) {
+  if (!url) return false;
+  const win = window.open(url, "_blank", "noopener,noreferrer");
+  if (win) return true;
+  window.location.assign(url);
+  return true;
+}
+
 export function composeEnquiry(form, lang) {
   const need = selectedRadio(form, "need");
   const pages = selectedRadio(form, "pages");
   const budget = selectedRadio(form, "budget");
   const languages = selectedLanguages(form);
   const notes = controlValue(form, "notes");
+  const name = controlValue(form, "name");
+  const contact = controlValue(form, "contact");
   const lines = [
     t(lang, "wa.prefill"),
     "",
+    t(lang, "f.name") + ": " + (name || "—"),
+    t(lang, "f.mail") + ": " + (contact || "—"),
     t(lang, "f.need") + ": " + (need ? t(lang, "f.need." + need) : "—"),
     t(lang, "f.pages") + ": " + (pages ? t(lang, "f.pages." + pages) : "—"),
     t(lang, "f.langs") + ": " +
@@ -89,6 +121,8 @@ export function composeEnquiry(form, lang) {
     budget: budget,
     languages: languages,
     notes: notes,
+    name: name,
+    contact: contact,
     kind: NEED_KIND_DE[need] || need,
     message: lines.join("\n"),
   };
@@ -179,22 +213,10 @@ function formUrl() {
 function updateChannels(root, form, lang) {
   const enquiry = composeEnquiry(form, lang);
   const waText = enquiry.message;
-  const wa =
-    "https://wa.me/" +
-    CONTACT_CONFIG.whatsapp +
-    "?text=" +
-    encodeURIComponent(waText);
-  const mail =
-    "mailto:" +
-    CONTACT_CONFIG.email +
-    "?subject=" +
-    encodeURIComponent("Website-Anfrage / Website enquiry") +
-    "&body=" +
-    encodeURIComponent(waText);
   const waLink = root.querySelector("#ch-wa");
   const mailLink = root.querySelector("#ch-mail");
-  if (waLink) waLink.href = wa;
-  if (mailLink) mailLink.href = mail;
+  if (waLink) waLink.href = whatsAppUrl(waText);
+  if (mailLink) mailLink.href = mailUrl(waText);
 }
 
 function updateRecap(root, form, lang) {
@@ -288,7 +310,9 @@ export function initContactConfigurator(root) {
 
     const endpoint = formUrl();
     if (!endpoint) {
-      say("warn", "f.off");
+      updateChannels(root, form, lang);
+      openUrl(whatsAppUrl(enquiry.message));
+      say("ok", "f.sentVia");
       return;
     }
 

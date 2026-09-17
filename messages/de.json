@@ -255,6 +255,7 @@
   "msg": {
     "sent": "Danke — Ihre Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden.",
     "miss": "Bitte füllen Sie Name, Kontakt und Nachricht aus.",
+    "via": "WhatsApp öffnet sich mit Ihrer Anfrage. Senden Sie die Nachricht dort ab — oder nutzen Sie den E-Mail-Link.",
     "off": "Das Formular ist noch nicht verbunden. Schreiben Sie uns solange direkt per WhatsApp oder E-Mail.",
     "err": "Das hat nicht geklappt. Bitte schreiben Sie uns direkt per WhatsApp oder E-Mail."
   },

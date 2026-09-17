@@ -1,5 +1,20 @@
 /* Site chrome: skip link, header, nav, language switch, footer. Page bodies stay elsewhere. */
 
+body { padding-top: var(--head-h, 72px); }
+html{
+  scroll-padding-top: calc(var(--head-h, 72px) + 12px);
+}
+@media (prefers-reduced-motion: no-preference){
+  html{scroll-behavior:smooth}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+}
+
+.spa-section{
+  scroll-margin-top: calc(var(--head-h, 72px) + 12px);
+}
+
 .skip-link{
   position:absolute;inset-inline-start:var(--gut,22px);top:8px;z-index:80;
   padding:8px 14px;border-radius:8px;background:var(--teal);color:var(--void);
@@ -7,8 +22,17 @@
 }
 .skip-link:focus{transform:none}
 
-.head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;transition:background .3s,border-color .3s}
-.head.stuck{background:rgba(5,12,18,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.head{
+  position:fixed;inset-inline:0;top:0;width:100%;
+  z-index:50;transition:background .3s,border-color .3s,box-shadow .3s;
+  padding-top:env(safe-area-inset-top, 0px);
+}
+.head.stuck{
+  background:rgba(5,12,18,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+  box-shadow:0 10px 30px -24px rgba(0,0,0,.9);
+}
 .head-in{display:flex;align-items:center;gap:14px 18px;min-height:72px;padding-block:12px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto}
 .brand b{font-family:var(--ui);font-weight:700;font-size:1.22rem;letter-spacing:-.03em}
@@ -17,7 +41,10 @@
 .nav{display:flex;gap:22px;align-items:center}
 .nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s}
 body[dir="rtl"] .nav a{font-family:var(--fa);letter-spacing:0;text-transform:none;font-size:.95rem}
-.nav a:hover,.nav a[aria-current="page"]{color:var(--teal)}
+.nav a:hover,
+.nav a[aria-current="true"],
+.nav a[aria-current="page"],
+.nav a[aria-current="location"]{color:var(--teal)}
 
 .langs{display:flex;flex-wrap:nowrap;gap:1px;border:1px solid var(--line);border-radius:999px;padding:3px;background:rgba(10,22,33,.7);direction:ltr}
 .langs button{

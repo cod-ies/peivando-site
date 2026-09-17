@@ -67,7 +67,7 @@ function renderCard(pkg, copy, lang) {
   const badge = pkg.featured
     ? `<p class="pricing-badge">${escapeHtml(copy.featured)}</p>`
     : `<p class="pricing-badge is-empty" aria-hidden="true"></p>`;
-  const contact = `/?paket=${encodeURIComponent(pkg.id)}#contact`;
+  const contact = `/?paket=${encodeURIComponent(pkg.id)}#kontakt`;
 
   return `<article class="pricing-card${pkg.featured ? " is-featured" : ""}" data-package="${pkg.id}">
     ${badge}
@@ -141,11 +141,13 @@ class PeivandoPricing extends HTMLElement {
       heading: this.getAttribute("heading") || "h2",
     });
     window.addEventListener("peivando:lang", this._onLang);
+    document.addEventListener("peivando:localechange", this._onLang);
     window.addEventListener("storage", this._onLang);
   }
 
   disconnectedCallback() {
     window.removeEventListener("peivando:lang", this._onLang);
+    document.removeEventListener("peivando:localechange", this._onLang);
     window.removeEventListener("storage", this._onLang);
   }
 

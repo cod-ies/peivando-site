@@ -1,6 +1,7 @@
 export const CONTACT_CONFIG = {
   whatsapp: "93747970495",
   email: "info@peivando.com",
+  /* Optional Formspree-style POST URL. Empty: deliver via WhatsApp + mailto. */
   formUrl: "",
 };
 

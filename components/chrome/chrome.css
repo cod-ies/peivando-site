@@ -12,6 +12,7 @@
 .head-in{display:flex;align-items:center;gap:14px 18px;min-height:72px;padding-block:12px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto}
 .brand b{font-family:var(--ui);font-weight:700;font-size:1.22rem;letter-spacing:-.03em}
+.head-tools{display:flex;align-items:center;gap:10px;flex:none}
 
 .nav{display:flex;gap:22px;align-items:center}
 .nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s}
@@ -59,15 +60,14 @@ body[dir="rtl"] .foot .links a{font-family:var(--fa);letter-spacing:0;text-trans
 
 @media (max-width:1100px){
   .menu-toggle{display:inline-flex;align-items:center;justify-content:center}
-  .head-in{flex-wrap:wrap;position:relative}
-  .langs{order:2}
-  .menu-toggle{order:3}
+  .head-in{flex-wrap:wrap}
+  .head-tools{order:2}
   .nav{
-    display:none;order:4;flex-basis:100%;flex-direction:column;align-items:flex-start;gap:0;
+    display:none;order:3;flex-basis:100%;flex-direction:column;align-items:flex-start;gap:0;
     padding:6px 0 10px;border-top:1px solid var(--line-soft);
   }
   .head.is-open .nav{display:flex}
   .nav a{padding:12px 2px;font-size:.8rem}
   body[dir="rtl"] .nav a{font-size:1.05rem}
-  .langs button{padding:6px 9px}
+  .langs button{padding:6px 8px}
 }

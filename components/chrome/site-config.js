@@ -1,6 +1,7 @@
 /* Peivando contact + routes. Phone is the live WhatsApp number — do not invent +49. */
 var PEIVANDO = {
   whatsappDigits: "93747970495",
+  whatsappDisplay: "+93 74 797 0495",
   email: "info@peivando.com",
   facebookUrl: "https://www.facebook.com/peivando",
   messengerUrl: "https://m.me/peivando",
@@ -16,11 +17,6 @@ var PEIVANDO = {
     datenschutz: "/datenschutz"
   }
 };
-
-PEIVANDO.whatsappDisplay = "+" + PEIVANDO.whatsappDigits.replace(
-  /^(\d{1,3})(\d{2})(\d{3})(\d+)$/,
-  "$1 $2 $3 $4"
-);
 
 /* Back-compat for the homepage contact script */
 var WHATSAPP = PEIVANDO.whatsappDigits;

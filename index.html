@@ -250,15 +250,17 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
       <a href="/ueber" data-i="nav.about">Über uns</a>
       <a href="/kontakt" data-i="nav.contact">Kontakt</a>
     </nav>
-    <div class="langs" role="group" aria-label="Sprache">
-      <button type="button" data-l="de" aria-pressed="true">DE</button>
-      <button type="button" data-l="en" aria-pressed="false">EN</button>
-      <button type="button" data-l="prs" aria-pressed="false">دری</button>
-      <button type="button" data-l="fa" aria-pressed="false">فارسی</button>
+    <div class="head-tools">
+      <div class="langs" role="group" aria-label="Sprache">
+        <button type="button" data-l="de" aria-pressed="true">DE</button>
+        <button type="button" data-l="en" aria-pressed="false">EN</button>
+        <button type="button" data-l="prs" aria-pressed="false">دری</button>
+        <button type="button" data-l="fa" aria-pressed="false">فارسی</button>
+      </div>
+      <button type="button" class="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menü öffnen">
+        <span class="menu-toggle-bars" aria-hidden="true"></span>
+      </button>
     </div>
-    <button type="button" class="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menü öffnen">
-      <span class="menu-toggle-bars" aria-hidden="true"></span>
-    </button>
   </div>
 </header>
 
@@ -436,8 +438,8 @@ body[dir="rtl"] .note{font-family:var(--fa);font-size:.85rem}
     </div>
     <div class="links">
       <a href="/kontakt" data-i="foot.contact">Kontakt</a>
-      <a href="/impressum" data-i="foot.impressum">Impressum</a>
-      <a href="/datenschutz" data-i="foot.privacy">Datenschutz</a>
+      <a href="/impressum" data-i="foot.imp">Impressum</a>
+      <a href="/datenschutz" data-i="foot.dse">Datenschutz</a>
       <a id="foot-facebook" href="https://www.facebook.com/peivando" target="_blank" rel="noopener" data-i="foot.facebook">Facebook</a>
     </div>
   </div>
@@ -544,7 +546,7 @@ document.addEventListener("peivando:localechange",function(e){
 
 document.getElementById("mail-addr").textContent=EMAIL;
 document.getElementById("ch-mail").href="mailto:"+EMAIL+"?subject="+encodeURIComponent("Website-Anfrage / Website enquiry");
-document.getElementById("wa-num").textContent="+"+WHATSAPP.replace(/^(\d{1,3})(\d{2})(\d{3})(\d+)$/,"$1 $2 $3 $4");
+document.getElementById("wa-num").textContent=PEIVANDO.whatsappDisplay;
 
 /* form */
 var form=document.getElementById("contact-form"), out=document.getElementById("form-msg");

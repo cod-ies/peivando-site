@@ -15,8 +15,8 @@
       "nav.about": "Über uns",
       "nav.contact": "Kontakt",
       "lang.label": "Sprache",
-      "foot.impressum": "Impressum",
-      "foot.privacy": "Datenschutz",
+      "foot.imp": "Impressum",
+      "foot.dse": "Datenschutz",
       "foot.contact": "Kontakt",
       "foot.facebook": "Facebook"
     },
@@ -30,8 +30,8 @@
       "nav.about": "About us",
       "nav.contact": "Contact",
       "lang.label": "Language",
-      "foot.impressum": "Impressum",
-      "foot.privacy": "Privacy",
+      "foot.imp": "Impressum",
+      "foot.dse": "Privacy",
       "foot.contact": "Contact",
       "foot.facebook": "Facebook"
     },
@@ -45,8 +45,8 @@
       "nav.about": "دربارهٔ ما",
       "nav.contact": "تماس",
       "lang.label": "زبان",
-      "foot.impressum": "Impressum",
-      "foot.privacy": "Datenschutz",
+      "foot.imp": "Impressum",
+      "foot.dse": "Datenschutz",
       "foot.contact": "تماس",
       "foot.facebook": "فیسبوک"
     },
@@ -60,8 +60,8 @@
       "nav.about": "درباره ما",
       "nav.contact": "تماس",
       "lang.label": "زبان",
-      "foot.impressum": "Impressum",
-      "foot.privacy": "Datenschutz",
+      "foot.imp": "Impressum",
+      "foot.dse": "Datenschutz",
       "foot.contact": "تماس",
       "foot.facebook": "فیسبوک"
     }
@@ -71,12 +71,49 @@
     return typeof T === "object" && T ? T : {};
   }
 
+  function flattenMessages(dict, prefix) {
+    var out = {};
+    if (!dict || typeof dict !== "object") return out;
+    Object.keys(dict).forEach(function (key) {
+      var path = prefix ? prefix + "." + key : key;
+      var value = dict[key];
+      if (value && typeof value === "object" && !Array.isArray(value)) {
+        var nested = flattenMessages(value, path);
+        Object.keys(nested).forEach(function (nestedKey) {
+          out[nestedKey] = nested[nestedKey];
+        });
+      } else if (typeof value === "string") {
+        out[path] = value;
+      }
+    });
+    return out;
+  }
+
+  function mergeLocalePack(code, nested) {
+    if (typeof T !== "object" || !T) window.T = { de: {} };
+    if (!T[code]) T[code] = {};
+    var flat = flattenMessages(nested);
+    Object.keys(flat).forEach(function (key) {
+      T[code][key] = flat[key];
+    });
+  }
+
+  function loadMessageFiles() {
+    return Promise.all(LOCALES.map(function (code) {
+      return fetch("messages/" + code + ".json").then(function (res) {
+        if (!res.ok) return null;
+        return res.json().then(function (nested) {
+          mergeLocalePack(code, nested);
+        });
+      }).catch(function () {
+        return null;
+      });
+    }));
+  }
+
   function localePack(locale) {
     var page = pageDicts();
-    var pack = page[locale];
-    if (!pack && locale === "prs") pack = page.fa;
-    if (!pack) pack = page.de || {};
-    return pack;
+    return page[locale] || {};
   }
 
   function chromePack(locale) {
@@ -250,7 +287,9 @@
   }
 
   bind();
-  applyLocale(storedLocale() || "de", false);
+  loadMessageFiles().then(function () {
+    applyLocale(window.lang || storedLocale() || "de", false);
+  });
 
   window.PeivandoChrome = {
     locales: LOCALES.slice(),

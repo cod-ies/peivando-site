@@ -8,14 +8,39 @@ var PEIVANDO = {
   siteUrl: "https://peivando.com",
   routes: {
     home: "/",
-    services: "/leistungen",
-    projects: "/projekte",
-    pricing: "/preise",
-    about: "/ueber",
-    contact: "/kontakt",
+    services: "/#leistungen",
+    projects: "/#projekte",
+    pricing: "/#preise",
+    about: "/#ueber",
+    contact: "/#kontakt",
     impressum: "/impressum",
     datenschutz: "/datenschutz"
+  },
+  sections: ["projekte", "leistungen", "preise", "ueber", "kontakt"],
+  hashAliases: {
+    services: "leistungen",
+    contact: "kontakt",
+    languages: "sprachen",
+    about: "ueber",
+    pricing: "preise",
+    process: "ablauf"
+  },
+  pathSections: {
+    "/leistungen": "leistungen",
+    "/projekte": "projekte",
+    "/preise": "preise",
+    "/ueber": "ueber",
+    "/about": "ueber",
+    "/kontakt": "kontakt",
+    "/contact": "kontakt",
+    "/faq": "faq"
   }
+};
+
+PEIVANDO.sectionForPath = function (pathname) {
+  var path = (pathname || "/").replace(/\/index\.html$/, "/");
+  if (path.length > 1 && path.slice(-1) === "/") path = path.slice(0, -1);
+  return this.pathSections[path] || "";
 };
 
 /* Back-compat for the homepage contact script */

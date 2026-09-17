@@ -100,7 +100,7 @@
 
   function loadMessageFiles() {
     return Promise.all(LOCALES.map(function (code) {
-      return fetch("messages/" + code + ".json").then(function (res) {
+      return fetch("/messages/" + code + ".json").then(function (res) {
         if (!res.ok) return null;
         return res.json().then(function (nested) {
           mergeLocalePack(code, nested);
@@ -158,7 +158,9 @@
       var langGroup = document.querySelector(".langs");
       if (langGroup) langGroup.setAttribute("aria-label", textFor("lang.label", locale));
       syncMenuToggleLabel(locale);
-      document.dispatchEvent(new CustomEvent("peivando:localechange", { detail: { locale: locale } }));
+      var detail = { locale: locale };
+      document.dispatchEvent(new CustomEvent("peivando:localechange", { detail: detail }));
+      window.dispatchEvent(new CustomEvent("peivando:lang", { detail: detail }));
     };
 
     if (animate && screen && !reduce) {
@@ -203,23 +205,196 @@
     return path || "/";
   }
 
+  function isHome() {
+    var path = currentPath();
+    return path === "/" || path === "";
+  }
+
+  function prefersReduceMotion() {
+    return window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
+  function hashAliases() {
+    return (typeof PEIVANDO === "object" && PEIVANDO && PEIVANDO.hashAliases) || {
+      services: "leistungen",
+      contact: "kontakt",
+      languages: "sprachen",
+      about: "ueber",
+      pricing: "preise",
+      process: "ablauf"
+    };
+  }
+
+  function navSectionIds() {
+    return (typeof PEIVANDO === "object" && PEIVANDO && PEIVANDO.sections) ||
+      ["projekte", "leistungen", "preise", "ueber", "kontakt"];
+  }
+
+  function resolveSection(raw) {
+    var id = String(raw || "").replace(/^#/, "");
+    var aliases = hashAliases();
+    if (aliases[id]) id = aliases[id];
+    if (id === "top" || id === "") return "top";
+    if (document.getElementById(id)) return id;
+    return "";
+  }
+
+  function syncHeadOffset() {
+    var head = document.getElementById("head");
+    if (!head) return 72;
+    var open = head.classList.contains("is-open");
+    if (open) head.classList.remove("is-open");
+    var height = Math.round(head.getBoundingClientRect().height) || 72;
+    if (open) head.classList.add("is-open");
+    document.documentElement.style.setProperty("--head-h", height + "px");
+    return height;
+  }
+
+  function markSection(id) {
+    document.querySelectorAll(".nav a[data-section]").forEach(function (link) {
+      var section = link.getAttribute("data-section");
+      if (id && section === id) link.setAttribute("aria-current", "true");
+      else link.removeAttribute("aria-current");
+    });
+  }
+
   function markCurrentNav() {
+    if (isHome()) {
+      spySections();
+      return;
+    }
     var path = currentPath();
     document.querySelectorAll(".nav a[href]").forEach(function (link) {
       var href = link.getAttribute("href") || "";
+      var section = link.getAttribute("data-section");
+      if (section && href.indexOf("#" + section) !== -1) {
+        link.removeAttribute("aria-current");
+        return;
+      }
       if (href.charAt(0) !== "/") {
         link.removeAttribute("aria-current");
         return;
       }
-      var route = href.replace(/\/index\.html$/, "/");
+      var route = href.split("#")[0].replace(/\/index\.html$/, "/");
       if (route.length > 1 && route.slice(-1) === "/") route = route.slice(0, -1);
       if (route === path) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");
     });
   }
 
+  var spyLock = "";
+
+  function spySections() {
+    if (!isHome()) return;
+    if (spyLock) {
+      markSection(spyLock);
+      return;
+    }
+    var ids = navSectionIds();
+    var els = [];
+    for (var i = 0; i < ids.length; i++) {
+      var node = document.getElementById(ids[i]);
+      if (node) els.push({ id: ids[i], node: node });
+    }
+    if (!els.length) return;
+    var headH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--head-h")) || 72;
+    var probe = headH + 28;
+    var current = "";
+    for (var j = 0; j < els.length; j++) {
+      if (els[j].node.getBoundingClientRect().top <= probe) current = els[j].id;
+    }
+    if (els[0].node.getBoundingClientRect().top > probe + 48) current = "";
+    markSection(current);
+  }
+
+  function scrollToSection(id, updateHash) {
+    id = resolveSection(id);
+    closeMenu();
+    if (!id || id === "top") {
+      var topBehavior = prefersReduceMotion() ? "auto" : "smooth";
+      window.scrollTo({ top: 0, behavior: topBehavior });
+      if (updateHash) history.pushState(null, "", location.pathname + location.search);
+      spyLock = "";
+      markSection("");
+      return true;
+    }
+    var el = document.getElementById(id);
+    if (!el) return false;
+    spyLock = id;
+    markSection(id);
+    var behavior = prefersReduceMotion() ? "auto" : "smooth";
+    el.scrollIntoView({ behavior: behavior, block: "start" });
+    if (updateHash) history.pushState(null, "", "#" + id);
+    window.setTimeout(function () {
+      spyLock = "";
+      spySections();
+    }, prefersReduceMotion() ? 50 : 650);
+    return true;
+  }
+
+  function sectionFromHref(href) {
+    if (!href) return "";
+    var hash = "";
+    var hashAt = href.indexOf("#");
+    if (hashAt !== -1) hash = href.slice(hashAt + 1);
+    if (hash) return resolveSection(hash);
+    try {
+      var url = new URL(href, location.origin);
+      if (typeof PEIVANDO === "object" && PEIVANDO && PEIVANDO.sectionForPath) {
+        return PEIVANDO.sectionForPath(url.pathname) || "";
+      }
+    } catch (e) {}
+    return "";
+  }
+
+  function onInPageNav(event, href) {
+    if (event.defaultPrevented || event.button !== 0) return false;
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return false;
+    var section = sectionFromHref(href);
+    if (!section) return false;
+    if (isHome()) {
+      event.preventDefault();
+      scrollToSection(section, true);
+      return true;
+    }
+    return false;
+  }
+
+  function bindInPageLinks() {
+    document.addEventListener("click", function (event) {
+      var node = event.target;
+      if (node && node.nodeType !== 1) node = node.parentElement;
+      var link = node && node.closest ? node.closest("a[href]") : null;
+      if (!link) return;
+      if (link.target && link.target !== "" && link.target !== "_self") return;
+      var href = link.getAttribute("href") || "";
+      if (href.charAt(0) === "#" || href.indexOf("/#") !== -1 || href === "/" || href === "/index.html") {
+        if (href === "/" || href === "/index.html") {
+          if (isHome() && event.button === 0 && !event.metaKey && !event.ctrlKey) {
+            event.preventDefault();
+            scrollToSection("top", true);
+            closeMenu();
+          }
+          return;
+        }
+        onInPageNav(event, href);
+        closeMenu();
+      }
+    });
+  }
+
+  function consumeInitialHash() {
+    if (!isHome()) return;
+    var id = resolveSection(location.hash);
+    if (!id || id === "top") return;
+    window.setTimeout(function () {
+      scrollToSection(id, false);
+    }, 40);
+  }
+
   function bind() {
     var head = document.getElementById("head");
+    syncHeadOffset();
     document.querySelectorAll(".langs button").forEach(function (button) {
       button.addEventListener("click", function () {
         applyLocale(button.getAttribute("data-l"), true);
@@ -233,10 +408,6 @@
       });
     }
 
-    document.querySelectorAll(".nav a").forEach(function (link) {
-      link.addEventListener("click", closeMenu);
-    });
-
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") closeMenu();
     });
@@ -248,13 +419,16 @@
 
     addEventListener("resize", function () {
       if (window.innerWidth > 1100) closeMenu();
+      syncHeadOffset();
+      spySections();
     });
 
     if (head) {
       addEventListener("scroll", function () {
-        head.classList.toggle("stuck", scrollY > 24);
+        head.classList.toggle("stuck", scrollY > 8);
+        spySections();
       }, { passive: true });
-      head.classList.toggle("stuck", scrollY > 24);
+      head.classList.toggle("stuck", scrollY > 8);
     }
 
     var year = document.getElementById("yr");
@@ -275,7 +449,20 @@
       if (footFb && PEIVANDO.facebookUrl) footFb.href = PEIVANDO.facebookUrl;
     }
 
+    bindInPageLinks();
+    if (isHome() && "scrollRestoration" in history) history.scrollRestoration = "manual";
     markCurrentNav();
+    consumeInitialHash();
+    addEventListener("hashchange", function () {
+      if (!isHome()) return;
+      var id = resolveSection(location.hash);
+      if (id) scrollToSection(id, false);
+    });
+    addEventListener("popstate", function () {
+      if (!isHome()) return;
+      var id = resolveSection(location.hash);
+      scrollToSection(id || "top", false);
+    });
   }
 
   function storedLocale() {
@@ -294,6 +481,8 @@
   window.PeivandoChrome = {
     locales: LOCALES.slice(),
     applyLocale: applyLocale,
-    closeMenu: closeMenu
+    closeMenu: closeMenu,
+    scrollToSection: scrollToSection,
+    resolveSection: resolveSection
   };
 })();

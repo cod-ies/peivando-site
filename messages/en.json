@@ -255,6 +255,7 @@
   "msg": {
     "sent": "Thank you — your enquiry has arrived. We'll reply within 24 hours.",
     "miss": "Please fill in name, contact and message.",
+    "via": "WhatsApp is opening with your enquiry. Send the message there — or use the email link.",
     "off": "The form isn't connected yet. Please write to us on WhatsApp or by email in the meantime.",
     "err": "That didn't go through. Please write to us on WhatsApp or by email."
   },

@@ -49,6 +49,8 @@ export const CONTACT_STRINGS = {
       "Das hat nicht geklappt. Bitte schreiben Sie uns direkt per WhatsApp oder E-Mail.",
     "f.sent":
       "Danke — Ihre Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden.",
+    "f.sentVia":
+      "WhatsApp öffnet sich mit Ihrer Anfrage. Senden Sie die Nachricht dort ab — oder nutzen Sie den E-Mail-Link.",
     "wa.prefill":
       "Hallo Peivando, ich möchte ein kostenloses Angebot für eine Website.",
   },
@@ -101,6 +103,8 @@ export const CONTACT_STRINGS = {
       "That didn’t go through. Please write to us on WhatsApp or by email.",
     "f.sent":
       "Thank you — your enquiry has arrived. We’ll reply within 24 hours.",
+    "f.sentVia":
+      "WhatsApp is opening with your enquiry. Send the message there — or use the email link.",
     "wa.prefill":
       "Hello Peivando, I’d like a free quote for a website.",
   },
@@ -152,6 +156,8 @@ export const CONTACT_STRINGS = {
       "فرم هنوز وصل نشده است. در این میان لطفاً از واتس‌اپ یا ایمیل بنویسید.",
     "f.err": "ارسال نشد. لطفاً از واتس‌اپ یا ایمیل بنویسید.",
     "f.sent": "سپاس — درخواست شما رسید. ظرف ۲۴ ساعت پاسخ می‌دهیم.",
+    "f.sentVia":
+      "واتس‌اپ با درخواست‌تان باز می‌شود. پیام را آنجا بفرستید — یا از پیوند ایمیل استفاده کنید.",
     "wa.prefill":
       "سلام پیوندو، می‌خواهم برای یک وب‌سایت پیشنهاد رایگان بگیرم.",
   },
@@ -203,6 +209,8 @@ export const CONTACT_STRINGS = {
       "فرم هنوز متصل نشده است. فعلاً از واتس‌اپ یا ایمیل بنویسید.",
     "f.err": "ارسال نشد. لطفاً از واتس‌اپ یا ایمیل بنویسید.",
     "f.sent": "سپاس — درخواست شما رسید. ظرف ۲۴ ساعت پاسخ می‌دهیم.",
+    "f.sentVia":
+      "واتس‌اپ با درخواست شما باز می‌شود. پیام را آنجا بفرستید — یا از لینک ایمیل استفاده کنید.",
     "wa.prefill":
       "سلام پیوندو، می‌خواهم برای یک وب‌سایت پیشنهاد رایگان بگیرم.",
   },

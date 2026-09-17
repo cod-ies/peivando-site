@@ -527,11 +527,18 @@ fa:{
 }};
 
 var MSG={
- de:{sent:"Danke — Ihre Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden.",miss:"Bitte füllen Sie Name, Kontakt und Nachricht aus.",off:"Das Formular ist noch nicht verbunden. Schreiben Sie uns solange direkt per WhatsApp oder E-Mail.",err:"Das hat nicht geklappt. Bitte schreiben Sie uns direkt per WhatsApp oder E-Mail."},
- en:{sent:"Thank you — your enquiry has arrived. We'll reply within 24 hours.",miss:"Please fill in name, contact and message.",off:"The form isn't connected yet. Please write to us on WhatsApp or by email in the meantime.",err:"That didn't go through. Please write to us on WhatsApp or by email."},
- fa:{sent:"سپاس — درخواست شما رسید. ظرف ۲۴ ساعت پاسخ می‌دهیم.",miss:"لطفاً نام، راه تماس و پیام را پر کنید.",off:"فرم هنوز وصل نشده است. در این میان لطفاً در واتس‌اپ یا ایمیل بنویسید.",err:"ارسال نشد. لطفاً در واتس‌اپ یا ایمیل بنویسید."}};
+ de:{sent:"Danke — Ihre Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden.",miss:"Bitte füllen Sie Name, Kontakt und Nachricht aus.",via:"WhatsApp öffnet sich mit Ihrer Anfrage. Senden Sie die Nachricht dort ab — oder nutzen Sie den E-Mail-Link.",err:"Das hat nicht geklappt. Bitte schreiben Sie uns direkt per WhatsApp oder E-Mail."},
+ en:{sent:"Thank you — your enquiry has arrived. We'll reply within 24 hours.",miss:"Please fill in name, contact and message.",via:"WhatsApp is opening with your enquiry. Send the message there — or use the email link.",err:"That didn't go through. Please write to us on WhatsApp or by email."},
+ fa:{sent:"سپاس — درخواست شما رسید. ظرف ۲۴ ساعت پاسخ می‌دهیم.",miss:"لطفاً نام، راه تماس و پیام را پر کنید.",via:"واتس‌اپ با درخواست شما باز می‌شود. پیام را آنجا بفرستید — یا از لینک ایمیل استفاده کنید.",err:"ارسال نشد. لطفاً در واتس‌اپ یا ایمیل بنویسید."},
+ prs:{sent:"سپاس — درخواست شما رسید. ظرف ۲۴ ساعت پاسخ می‌دهیم.",miss:"لطفاً نام، راه تماس و پیام را پر کنید.",via:"واتس‌اپ با درخواست‌تان باز می‌شود. پیام را آنجا بفرستید — یا از پیوند ایمیل استفاده کنید.",err:"ارسال نشد. لطفاً در واتس‌اپ یا ایمیل بنویسید."}};
 
-var WA_TEXT={de:"Hallo Peivando, ich interessiere mich für eine Website.",en:"Hello Peivando, I'm interested in a website.",fa:"سلام پیوندو، من به یک وب‌سایت علاقه‌مند هستم."};
+var WA_TEXT={de:"Hallo Peivando, ich interessiere mich für eine Website.",en:"Hello Peivando, I'm interested in a website.",fa:"سلام پیوندو، من به یک وب‌سایت علاقه‌مند هستم.",prs:"سلام پیوندو، من به یک وب‌سایت علاقه‌مند هستم."};
+var ENQUIRY_LABELS={
+ de:{name:"Name",contact:"Kontakt",kind:"Thema",msg:"Nachricht"},
+ en:{name:"Name",contact:"Contact",kind:"Topic",msg:"Message"},
+ fa:{name:"نام",contact:"تماس",kind:"موضوع",msg:"پیام"},
+ prs:{name:"نام",contact:"تماس",kind:"موضوع",msg:"پیام"}
+};
 
 (function(){document.querySelectorAll("[data-i]").forEach(function(el){T.de[el.getAttribute("data-i")]=el.innerHTML;});})();
 
@@ -551,12 +558,40 @@ document.getElementById("wa-num").textContent=PEIVANDO.whatsappDisplay;
 /* form */
 var form=document.getElementById("contact-form"), out=document.getElementById("form-msg");
 function say(k,t){ out.className="msg show "+k; out.textContent=t; }
+function enquiryMessage(fd, locale){
+  var labels=ENQUIRY_LABELS[locale]||ENQUIRY_LABELS.en;
+  var intro=WA_TEXT[locale]||WA_TEXT.de;
+  return [
+    intro,
+    "",
+    labels.name+": "+String(fd.get("name")||"").trim(),
+    labels.contact+": "+String(fd.get("contact")||"").trim(),
+    labels.kind+": "+String(fd.get("kind")||"").trim(),
+    "",
+    labels.msg+":",
+    String(fd.get("message")||"").trim()
+  ].join("\n");
+}
+function deliverEnquiry(text){
+  var wa=PEIVANDO.whatsAppUrl(text);
+  var mail=PEIVANDO.mailUrl("Website-Anfrage / Website enquiry", text);
+  var ch=document.getElementById("ch-wa");
+  if(ch) ch.href=wa;
+  var mailLink=document.getElementById("ch-mail");
+  if(mailLink) mailLink.href=mail;
+  PEIVANDO.openUrl(wa);
+}
 form.addEventListener("submit",function(e){
   e.preventDefault();
   var locale=window.lang||"de";
   var m=MSG[locale]||MSG.fa||MSG.de, fd=new FormData(form);
   if(!String(fd.get("name")||"").trim()||!String(fd.get("contact")||"").trim()||!String(fd.get("message")||"").trim()){ say("warn",m.miss); return; }
-  if(!FORM_URL){ say("warn",m.off); return; }
+  var text=enquiryMessage(fd, locale);
+  if(!FORM_URL){
+    deliverEnquiry(text);
+    say("ok", m.via);
+    return;
+  }
   fd.append("_language",locale);
   fetch(FORM_URL,{method:"POST",body:fd,headers:{Accept:"application/json"}})
     .then(function(r){ if(r.ok){form.reset(); say("ok",m.sent);} else say("warn",m.err); })

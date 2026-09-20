@@ -34,3 +34,40 @@ var FORM_URL = "";                       /* paste Formspree endpoint here to act
     });
   }
 })();
+
+/* ─── mobile menu ──────────────────────────────────────────────────────
+   The header links are hidden below 820px, so the page needs a way to
+   reach them. Progressive: without JS the button simply does nothing
+   and the links stay in the header at wider widths. */
+(function(){
+  var btn = document.querySelector(".navbtn");
+  var nav = document.getElementById("sitenav");
+  if(!btn || !nav) return;
+
+  function set(open){
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    nav.classList.toggle("open", open);
+  }
+  function close(){ set(false); }
+
+  btn.addEventListener("click", function(){
+    set(btn.getAttribute("aria-expanded") !== "true");
+  });
+
+  /* jumping to a section should dismiss the panel */
+  nav.addEventListener("click", function(e){
+    if(e.target.closest("a")) close();
+  });
+
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && nav.classList.contains("open")){ close(); btn.focus(); }
+  });
+
+  document.addEventListener("click", function(e){
+    if(!nav.classList.contains("open")) return;
+    if(!nav.contains(e.target) && !btn.contains(e.target)) close();
+  });
+
+  /* if the viewport grows past the breakpoint the panel is irrelevant */
+  addEventListener("resize", function(){ if(innerWidth > 820) close(); }, {passive:true});
+})();

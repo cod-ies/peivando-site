@@ -88,14 +88,54 @@ p{margin:0}
   -webkit-backdrop-filter:blur(16px) saturate(1.5);
   border-bottom:1px solid var(--line-soft);box-shadow:0 10px 30px -26px rgba(11,42,91,.5);
 }
-.head-in{display:flex;align-items:center;gap:18px;min-height:72px;flex-wrap:wrap;padding-block:12px}
+.head-in{position:relative;display:flex;align-items:center;gap:18px;min-height:72px;flex-wrap:wrap;padding-block:12px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto}
 .brand b{font-family:var(--ui);font-weight:600;font-size:1.22rem;letter-spacing:-.03em}
 .nav{display:flex;gap:26px}
 .nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s}
 [dir="rtl"] .nav a{font-family:var(--fa);letter-spacing:0;text-transform:none;font-size:.95rem}
 .nav a:hover{color:var(--teal)}
-@media (max-width:820px){.nav{display:none}}
+
+/* ── mobile menu ──────────────────────────────────────────────────────
+   Above 820px the links sit in the header. Below it they collapse into
+   a disclosure button; the panel is the same <nav>, so there is one set
+   of links and one source of truth. */
+.navbtn{
+  display:none;flex:none;width:42px;height:42px;padding:0;cursor:pointer;
+  align-items:center;justify-content:center;gap:4px;flex-direction:column;
+  background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:12px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:.2s;
+}
+.navbtn:hover{border-color:var(--teal)}
+.navbtn i{display:block;width:17px;height:1.7px;border-radius:2px;background:var(--ink);transition:transform .25s,opacity .2s}
+.navbtn[aria-expanded="true"] i:nth-child(1){transform:translateY(5.7px) rotate(45deg)}
+.navbtn[aria-expanded="true"] i:nth-child(2){opacity:0}
+.navbtn[aria-expanded="true"] i:nth-child(3){transform:translateY(-5.7px) rotate(-45deg)}
+
+@media (max-width:820px){
+  /* keep brand · languages · menu on one row */
+  .head-in{gap:10px;flex-wrap:nowrap}
+  .langs{order:2;flex:none}
+  .langs a{padding:7px 11px}
+  .navbtn{display:flex;order:3;width:40px;height:40px}
+  .nav{
+    display:none;position:absolute;top:calc(100% - 2px);inset-inline:var(--gut);z-index:60;
+    padding:10px;border-radius:var(--r-md);
+    background:rgba(255,255,255,.94);backdrop-filter:blur(18px) saturate(1.5);
+    -webkit-backdrop-filter:blur(18px) saturate(1.5);
+    border:1px solid var(--line);box-shadow:var(--sh-2);
+  }
+  .nav.open{display:block;animation:pvMenu .22s cubic-bezier(.2,.8,.2,1) both}
+  .nav.open ul{display:grid;gap:2px}
+  .nav.open li{margin:0}
+  .nav.open a{
+    display:block;padding:14px 14px;border-radius:10px;
+    font-family:var(--ui);font-size:1rem;letter-spacing:0;text-transform:none;color:var(--ink);
+  }
+  .nav.open a:hover,.nav.open a:focus-visible{background:var(--panel-2);color:var(--teal)}
+  [dir="rtl"] .nav.open a{font-family:var(--fa)}
+}
+@keyframes pvMenu{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
 .langs{display:flex;gap:1px;border:1px solid var(--line);border-radius:999px;padding:3px;background:rgba(255,255,255,.75);backdrop-filter:blur(10px)}
 .langs a{
   font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
@@ -521,7 +561,7 @@ footer{border-top:1px solid var(--line-soft);padding-block:44px 52px;background:
 /* Navigation als Liste */
 .nav ul{list-style:none;margin:0;padding:0;display:flex;gap:34px;align-items:center}
 .nav li{margin:0}
-@media (max-width:820px){.nav ul{display:none}}
+@media (max-width:820px){.nav:not(.open) ul{display:none}}
 
 /* ───────── Urdu (Nastaliq) ───────── */
 [lang="ur"]{--fa:'Noto Nastaliq Urdu','Noto Naskh Arabic',Vazirmatn,serif}

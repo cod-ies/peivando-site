@@ -9,7 +9,7 @@
   --demo-banner: #1c1916;
   --demo-banner-ink: #f6f3ee;
   --demo-display: "Instrument Serif", Georgia, serif;
-  --demo-ui: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --demo-ui: "Outfit", "Helvetica Neue", Arial, sans-serif;
   --demo-fa: "Vazirmatn", "Noto Naskh Arabic", Tahoma, sans-serif;
   --demo-max: 70rem;
 }
@@ -32,7 +32,7 @@
   --demo-line: #d5dde3;
   --demo-card: #ffffff;
   --demo-accent: #1f4e62;
-  --demo-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --demo-display: "Outfit", "Helvetica Neue", Arial, sans-serif;
 }
 [data-theme="clean"] {
   --demo-bg: #f3f6f4;
@@ -79,7 +79,7 @@ a { color: inherit; }
   align-items: center;
   justify-content: space-between;
 }
-.banner a { color: #7fe6d3; text-decoration: none; }
+.banner a { color: #0B3FD6; text-decoration: none; }
 .banner a:hover { text-decoration: underline; }
 
 .wrap {

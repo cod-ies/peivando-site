@@ -38,8 +38,8 @@ body[dir="rtl"] .trust-ticks span{
 
 .proj-grid{
   display:grid;
-  grid-template-columns:repeat(3, minmax(0,1fr));
-  gap:18px;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:16px;
 }
 .proj-card{
   display:grid;
@@ -57,7 +57,8 @@ body[dir="rtl"] .trust-ticks span{
 .proj-tag{color:var(--teal)}
 .proj-sector{color:var(--dim);font-size:.92rem}
 .proj-card p{color:var(--ink-2);font-size:.97rem}
-@media (max-width:900px){.proj-grid{grid-template-columns:1fr}}
+@media (max-width:1180px){.proj-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.proj-grid{grid-template-columns:1fr}}
 
 .industry-links{
   display:flex;
@@ -120,3 +121,35 @@ body[dir="rtl"] .industry-links a{
 .about-copy p{color:var(--ink-2);font-size:1.02rem}
 
 #preise{display:block}
+
+/* ═══ light-identity harmony (2026 rebrand) ═══════════════════════════
+   Appended so the component pages inherit the same buttons, cards and
+   elevation as the homepage. Later rules win, so nothing above needs
+   editing by hand. */
+.btn,.contact-btn,.pricing-cta{
+  border-radius:999px;font-weight:500;
+  transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s,background .22s,border-color .22s,color .22s;
+}
+.btn-fill,.pricing-cta{
+  background:linear-gradient(165deg,#3D7BFF,#0B3FD6);color:var(--on-accent,#fff);border-color:transparent;
+  box-shadow:0 20px 44px -16px rgba(26,92,255,.55),inset 0 1px 0 rgba(255,255,255,.45);
+}
+.btn-fill:hover,.pricing-cta:hover{
+  background:linear-gradient(165deg,#3D7BFF,#0B3FD6);transform:translateY(-2px);
+  box-shadow:0 28px 60px -18px rgba(26,92,255,.8),inset 0 1px 0 rgba(255,255,255,.5);
+}
+.btn-line{background:rgba(255,255,255,.65);border-color:rgba(11,42,91,.22);color:var(--ink)}
+.btn-line:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+
+.card,.work-card,.ind-card,.proj-card,.pricing-card,.rel-card,.callout,.quote,.contact-choice,.pkg,.hub,.stand{
+  background:var(--panel);border-color:var(--line);
+  box-shadow:0 1px 2px rgba(11,42,91,.05),0 4px 12px -6px rgba(11,42,91,.10);
+  transition:transform .22s,box-shadow .22s,border-color .22s;
+}
+.card:hover,.work-card:hover,.ind-card:hover,.proj-card:hover,.rel-card:hover,.contact-choice:hover{
+  transform:translateY(-2px);border-color:rgba(26,92,255,.42);
+  box-shadow:0 2px 4px rgba(11,42,91,.04),0 16px 34px -16px rgba(11,42,91,.20);
+}
+.contact-form,.pricing-shell,.toc,.doc{background:var(--panel);border-color:var(--line)}
+input,textarea,select{background:var(--void);border-color:var(--line);color:var(--ink)}
+input:focus,textarea:focus,select:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 4px rgba(26,92,255,.12)}

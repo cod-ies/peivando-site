@@ -1,19 +1,20 @@
 /* Peivando services + industry pages — same tokens as the live homepage. */
 :root{
-  color-scheme:dark;
-  --void:#050C12;
-  --panel:#0A1621;
-  --panel-2:#10212D;
-  --line:#1A3141;
-  --line-soft:#132635;
-  --ink:#EEF5F5;
-  --ink-2:#A3BCC3;
-  --dim:#6A8894;
-  --teal:#3ACFB6;
-  --teal-2:#7FE6D3;
+  color-scheme:light;
+  --void:#F7F9FD;
+  --on-accent:#FFFFFF;
+  --panel:#FFFFFF;
+  --panel-2:#EEF2FA;
+  --line:rgba(11,42,91,.13);
+  --line-soft:rgba(11,42,91,.07);
+  --ink:#0B2A5B;
+  --ink-2:#3B5580;
+  --dim:#4F6690;
+  --teal:#1A5CFF;
+  --teal-2:#0B3FD6;
   --display:'Instrument Serif',Georgia,'Times New Roman',serif;
-  --ui:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,Consolas,monospace;
+  --ui:'Outfit','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Consolas,monospace;
   --fa:'Vazirmatn','Noto Naskh Arabic',Tahoma,sans-serif;
   --maxw:78rem;
   --gut:22px;
@@ -28,7 +29,7 @@ body{
 }
 img{max-width:100%}
 a{color:inherit}
-::selection{background:var(--teal);color:var(--void)}
+::selection{background:var(--teal);color:var(--on-accent)}
 :focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:3px}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 
@@ -46,7 +47,7 @@ p{margin:0}
 .lede{font-size:clamp(1.05rem,1.55vw,1.22rem);color:var(--ink-2);max-width:54ch;line-height:1.62}
 
 .head{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;transition:background .3s,border-color .3s}
-.head.stuck{background:rgba(5,12,18,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
+.head.stuck{background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-soft)}
 .head-in{display:flex;align-items:center;gap:18px;min-height:72px;flex-wrap:wrap;padding-block:12px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-inline-end:auto}
 .brand b{font-family:var(--ui);font-weight:700;font-size:1.22rem;letter-spacing:-.03em}
@@ -54,13 +55,13 @@ p{margin:0}
 .nav a{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .2s}
 body[dir="rtl"] .nav a{font-family:var(--fa);letter-spacing:0;text-transform:none;font-size:.95rem}
 .nav a:hover,.nav a[aria-current="page"]{color:var(--teal)}
-.langs{display:flex;gap:1px;border:1px solid var(--line);border-radius:999px;padding:3px;background:rgba(10,22,33,.7)}
+.langs{display:flex;gap:1px;border:1px solid var(--line);border-radius:999px;padding:3px;background:rgba(255,255,255,.7)}
 .langs button{
   font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
   border:0;background:transparent;color:var(--dim);padding:7px 12px;border-radius:999px;cursor:pointer;transition:.2s;
 }
 .langs button[data-l="fa"],.langs button[data-l="prs"]{font-family:var(--fa);letter-spacing:0;text-transform:none;font-size:.88rem}
-.langs button[aria-pressed="true"]{background:var(--teal);color:var(--void);font-weight:500}
+.langs button[aria-pressed="true"]{background:var(--teal);color:var(--on-accent);font-weight:500}
 .langs button:hover:not([aria-pressed="true"]){color:var(--ink)}
 
 .hero{padding-block:clamp(52px,8vw,104px) clamp(40px,6vw,72px)}
@@ -74,7 +75,7 @@ body[dir="rtl"] .nav a{font-family:var(--fa);letter-spacing:0;text-transform:non
   padding:14px 22px;border-radius:8px;border:1px solid transparent;transition:.2s;
 }
 body[dir="rtl"] .btn{font-family:var(--fa)}
-.btn-fill{background:var(--teal);color:var(--void);font-weight:700}
+.btn-fill{background:var(--teal);color:var(--on-accent);font-weight:700}
 .btn-fill:hover{background:var(--teal-2)}
 .btn-line{border-color:var(--line);color:var(--ink)}
 .btn-line:hover{border-color:var(--teal);color:var(--teal)}
@@ -116,7 +117,7 @@ body[dir="rtl"] .price{font-family:var(--fa);letter-spacing:0}
 }
 
 .pkg{
-  border:1px solid rgba(58,207,182,.35);background:var(--panel);border-radius:16px;
+  border:1px solid rgba(26,92,255,.35);background:var(--panel);border-radius:16px;
   padding:clamp(22px,3vw,36px);scroll-margin-top:96px;
 }
 .pkg .lede{margin-top:14px}
@@ -153,5 +154,37 @@ footer{border-top:1px solid var(--line-soft);padding-block:36px 48px;background:
 .foot a{text-decoration:none}
 .foot .links{display:flex;gap:22px;flex-wrap:wrap}
 .foot a:hover{color:var(--teal)}
-.skip{position:absolute;inset-inline-start:-999px;top:8px;background:var(--teal);color:var(--void);padding:8px 12px;border-radius:6px;z-index:80}
+.skip{position:absolute;inset-inline-start:-999px;top:8px;background:var(--teal);color:var(--on-accent);padding:8px 12px;border-radius:6px;z-index:80}
 .skip:focus{inset-inline-start:12px}
+
+/* ═══ light-identity harmony (2026 rebrand) ═══════════════════════════
+   Appended so the component pages inherit the same buttons, cards and
+   elevation as the homepage. Later rules win, so nothing above needs
+   editing by hand. */
+.btn,.contact-btn,.pricing-cta{
+  border-radius:999px;font-weight:500;
+  transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s,background .22s,border-color .22s,color .22s;
+}
+.btn-fill,.pricing-cta{
+  background:linear-gradient(165deg,#3D7BFF,#0B3FD6);color:var(--on-accent,#fff);border-color:transparent;
+  box-shadow:0 20px 44px -16px rgba(26,92,255,.55),inset 0 1px 0 rgba(255,255,255,.45);
+}
+.btn-fill:hover,.pricing-cta:hover{
+  background:linear-gradient(165deg,#3D7BFF,#0B3FD6);transform:translateY(-2px);
+  box-shadow:0 28px 60px -18px rgba(26,92,255,.8),inset 0 1px 0 rgba(255,255,255,.5);
+}
+.btn-line{background:rgba(255,255,255,.65);border-color:rgba(11,42,91,.22);color:var(--ink)}
+.btn-line:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+
+.card,.work-card,.ind-card,.proj-card,.pricing-card,.rel-card,.callout,.quote,.contact-choice,.pkg,.hub,.stand{
+  background:var(--panel);border-color:var(--line);
+  box-shadow:0 1px 2px rgba(11,42,91,.05),0 4px 12px -6px rgba(11,42,91,.10);
+  transition:transform .22s,box-shadow .22s,border-color .22s;
+}
+.card:hover,.work-card:hover,.ind-card:hover,.proj-card:hover,.rel-card:hover,.contact-choice:hover{
+  transform:translateY(-2px);border-color:rgba(26,92,255,.42);
+  box-shadow:0 2px 4px rgba(11,42,91,.04),0 16px 34px -16px rgba(11,42,91,.20);
+}
+.contact-form,.pricing-shell,.toc,.doc{background:var(--panel);border-color:var(--line)}
+input,textarea,select{background:var(--void);border-color:var(--line);color:var(--ink)}
+input:focus,textarea:focus,select:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 4px rgba(26,92,255,.12)}

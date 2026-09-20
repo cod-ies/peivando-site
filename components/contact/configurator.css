@@ -1,18 +1,19 @@
 :root {
-  color-scheme: dark;
-  --void: #050c12;
-  --panel: #0a1621;
-  --panel-2: #10212d;
-  --line: #1a3141;
-  --line-soft: #132635;
-  --ink: #eef5f5;
-  --ink-2: #a3bcc3;
-  --dim: #6a8894;
-  --teal: #3acfb6;
-  --teal-2: #7fe6d3;
+  color-scheme:light;
+  --void: #F7F9FD;
+  --on-accent:#FFFFFF;
+  --panel: #FFFFFF;
+  --panel-2: #EEF2FA;
+  --line: rgba(11,42,91,.13);
+  --line-soft: rgba(11,42,91,.07);
+  --ink: #0B2A5B;
+  --ink-2: #3B5580;
+  --dim: #4F6690;
+  --teal: #1A5CFF;
+  --teal-2: #0B3FD6;
   --display: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --ui: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --ui: "Outfit", "Helvetica Neue", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
   --fa: "Vazirmatn", "Noto Naskh Arabic", Tahoma, sans-serif;
   --maxw: 78rem;
   --gut: 22px;
@@ -34,7 +35,7 @@ body.contact-page {
 }
 img { max-width: 100%; }
 a { color: inherit; }
-::selection { background: var(--teal); color: var(--void); }
+::selection { background: var(--teal); color:var(--on-accent); }
 :focus-visible {
   outline: 2px solid var(--teal);
   outline-offset: 3px;
@@ -72,7 +73,7 @@ body.contact-page[dir="rtl"] .contact-mono { font-family: var(--fa); letter-spac
   top: 0;
   transform: translateY(-120%);
   background: var(--teal);
-  color: var(--void);
+  color:var(--on-accent);
   font-weight: 700;
   padding: 10px 14px;
   border-radius: 0 0 8px 8px;
@@ -85,7 +86,7 @@ body.contact-page[dir="rtl"] .contact-mono { font-family: var(--fa); letter-spac
   position: sticky;
   top: env(safe-area-inset-top, 0px);
   z-index: 50;
-  background: rgba(5, 12, 18, 0.86);
+  background: rgba(255,255,255, 0.86);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-soft);
 }
@@ -116,7 +117,7 @@ body.contact-page[dir="rtl"] .contact-mono { font-family: var(--fa); letter-spac
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 3px;
-  background: rgba(10, 22, 33, 0.7);
+  background: rgba(255,255,255, 0.7);
 }
 .contact-langs button {
   font-family: var(--mono);
@@ -140,7 +141,7 @@ body.contact-page[dir="rtl"] .contact-mono { font-family: var(--fa); letter-spac
 }
 .contact-langs button[aria-pressed="true"] {
   background: var(--teal);
-  color: var(--void);
+  color:var(--on-accent);
   font-weight: 500;
 }
 .contact-langs button:hover:not([aria-pressed="true"]) { color: var(--ink); }
@@ -293,7 +294,7 @@ body.contact-page[dir="rtl"] .contact-field label {
 .contact-choice:hover { border-color: var(--teal); }
 .contact-choice:has(:checked) {
   border-color: var(--teal);
-  background: rgba(58, 207, 182, 0.1);
+  background: rgba(26,92,255, 0.1);
 }
 .contact-choice:has(:focus-visible) {
   outline: 2px solid var(--teal);
@@ -347,7 +348,7 @@ body.contact-page[dir="rtl"] .contact-field label {
   border-radius: 8px;
   border: 1px solid transparent;
   background: var(--teal);
-  color: var(--void);
+  color:var(--on-accent);
   transition: 0.2s;
 }
 body.contact-page[dir="rtl"] .contact-btn { font-family: var(--fa); }
@@ -376,9 +377,9 @@ body.contact-page[dir="rtl"] .contact-note {
 }
 .contact-msg.show { display: block; }
 .contact-msg.ok {
-  background: rgba(58, 207, 182, 0.12);
+  background: rgba(26,92,255, 0.12);
   color: var(--teal-2);
-  border: 1px solid rgba(58, 207, 182, 0.3);
+  border: 1px solid rgba(26,92,255, 0.3);
 }
 .contact-msg.warn {
   background: var(--panel-2);
@@ -393,3 +394,35 @@ body.contact-page[dir="rtl"] .contact-note {
 }
 .contact-foot a { text-decoration: none; }
 .contact-foot a:hover { color: var(--teal); }
+
+/* ═══ light-identity harmony (2026 rebrand) ═══════════════════════════
+   Appended so the component pages inherit the same buttons, cards and
+   elevation as the homepage. Later rules win, so nothing above needs
+   editing by hand. */
+.btn,.contact-btn,.pricing-cta{
+  border-radius:999px;font-weight:500;
+  transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s,background .22s,border-color .22s,color .22s;
+}
+.btn-fill,.pricing-cta{
+  background:linear-gradient(165deg,#3D7BFF,#0B3FD6);color:var(--on-accent,#fff);border-color:transparent;
+  box-shadow:0 20px 44px -16px rgba(26,92,255,.55),inset 0 1px 0 rgba(255,255,255,.45);
+}
+.btn-fill:hover,.pricing-cta:hover{
+  background:linear-gradient(165deg,#3D7BFF,#0B3FD6);transform:translateY(-2px);
+  box-shadow:0 28px 60px -18px rgba(26,92,255,.8),inset 0 1px 0 rgba(255,255,255,.5);
+}
+.btn-line{background:rgba(255,255,255,.65);border-color:rgba(11,42,91,.22);color:var(--ink)}
+.btn-line:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+
+.card,.work-card,.ind-card,.proj-card,.pricing-card,.rel-card,.callout,.quote,.contact-choice,.pkg,.hub,.stand{
+  background:var(--panel);border-color:var(--line);
+  box-shadow:0 1px 2px rgba(11,42,91,.05),0 4px 12px -6px rgba(11,42,91,.10);
+  transition:transform .22s,box-shadow .22s,border-color .22s;
+}
+.card:hover,.work-card:hover,.ind-card:hover,.proj-card:hover,.rel-card:hover,.contact-choice:hover{
+  transform:translateY(-2px);border-color:rgba(26,92,255,.42);
+  box-shadow:0 2px 4px rgba(11,42,91,.04),0 16px 34px -16px rgba(11,42,91,.20);
+}
+.contact-form,.pricing-shell,.toc,.doc{background:var(--panel);border-color:var(--line)}
+input,textarea,select{background:var(--void);border-color:var(--line);color:var(--ink)}
+input:focus,textarea:focus,select:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 4px rgba(26,92,255,.12)}

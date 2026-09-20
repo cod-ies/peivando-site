@@ -583,3 +583,12 @@ footer{border-top:1px solid var(--line-soft);padding-block:44px 52px;background:
   .m-body{grid-template-columns:minmax(0,1fr)}
   .m-art{display:none}
 }
+
+/* The pricing component ships its own .pricing-section spacing, so the
+   wrapper must not add a second set of section paddings. */
+#preise{padding-block:0}
+#preise:has(noscript:only-child){padding-block:clamp(66px,9vw,118px)}
+
+/* consecutive body paragraphs in articles need separating — p{margin:0} is
+   global, and nothing was restoring the gap */
+.art p + p,.art .lede + p{margin-top:1.1em}

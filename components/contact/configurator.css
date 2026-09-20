@@ -399,15 +399,15 @@ body.contact-page[dir="rtl"] .contact-note {
    Appended so the component pages inherit the same buttons, cards and
    elevation as the homepage. Later rules win, so nothing above needs
    editing by hand. */
-.btn,.contact-btn,.pricing-cta{
+.btn,.contact-btn{
   border-radius:999px;font-weight:500;
   transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s,background .22s,border-color .22s,color .22s;
 }
-.btn-fill,.pricing-cta{
+.btn-fill{
   background:linear-gradient(165deg,#3D7BFF,#0B3FD6);color:var(--on-accent,#fff);border-color:transparent;
   box-shadow:0 20px 44px -16px rgba(26,92,255,.55),inset 0 1px 0 rgba(255,255,255,.45);
 }
-.btn-fill:hover,.pricing-cta:hover{
+.btn-fill:hover{
   background:linear-gradient(165deg,#3D7BFF,#0B3FD6);transform:translateY(-2px);
   box-shadow:0 28px 60px -18px rgba(26,92,255,.8),inset 0 1px 0 rgba(255,255,255,.5);
 }
